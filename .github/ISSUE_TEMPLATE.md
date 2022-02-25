@@ -8,6 +8,6 @@
 
 ## Link to PR (if any)
 
-## KHipster Version(s)
+## PHipster Version(s)
 
 -   [] Checking this box is mandatory (this is just to show you read everything)

@@ -43,13 +43,13 @@ module.exports = class extends ServerGenerator {
 
     get initializing() {
         const phaseFromJHipster = super._initializing();
-        const khipsterCustomSteps = {
+        const phipsterCustomSteps = {
             setupConstants() {
                 this.MOCKITO_KOTLIN_VERSION = kotlinConstants.MOCKITO_KOTLIN_VERSION;
                 this.DETEKT_CONFIG_FILE = kotlinConstants.DETEKT_CONFIG_FILE;
             },
         };
-        return Object.assign(phaseFromJHipster, khipsterCustomSteps);
+        return Object.assign(phaseFromJHipster, phipsterCustomSteps);
     }
 
     get prompting() {

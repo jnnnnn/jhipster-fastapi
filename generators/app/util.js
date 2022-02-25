@@ -21,17 +21,17 @@ const packagejs = require('../../package.json');
 
 function displayLogo() {
     this.log('\n');
-    this.log(`${chalk.blue(' ██╗  ██╗')}${chalk.green(' ██╗   ██╗ ████████╗ ███████╗   ██████╗ ████████╗ ████████╗ ███████╗')}`);
-    this.log(`${chalk.blue(' ██║ ██╔╝')}${chalk.green(' ██║   ██║ ╚══██╔══╝ ██╔═══██╗ ██╔════╝ ╚══██╔══╝ ██╔═════╝ ██╔═══██╗')}`);
-    this.log(`${chalk.blue(' █████╔╝ ')}${chalk.green(' ████████║    ██║    ███████╔╝ ╚█████╗     ██║    ██████╗   ███████╔╝')}`);
-    this.log(`${chalk.blue(' ██╔═██╗ ')}${chalk.green(' ██╔═══██║    ██║    ██╔════╝   ╚═══██╗    ██║    ██╔═══╝   ██╔══██║')}`);
-    this.log(`${chalk.blue(' ██║  ██╗')}${chalk.green(' ██║   ██║ ████████╗ ██║       ██████╔╝    ██║    ████████╗ ██║  ╚██╗')}`);
-    this.log(`${chalk.blue(' ╚═╝  ╚═╝')}${chalk.green(' ╚═╝   ╚═╝ ╚═══════╝ ╚═╝       ╚═════╝     ╚═╝    ╚═══════╝ ╚═╝   ╚═╝')}\n`);
-    this.log(chalk.white('Welcome to KHipster ') + chalk.yellow(`v${packagejs.version}`));
+    this.log(`${chalk.blue(' ███████╗ ')}${chalk.green(' ██╗   ██╗ ████████╗ ███████╗   ██████╗ ████████╗ ████████╗ ███████╗')}`);
+    this.log(`${chalk.blue(' ██╔═══██╗')}${chalk.green(' ██║   ██║ ╚══██╔══╝ ██╔═══██╗ ██╔════╝ ╚══██╔══╝ ██╔═════╝ ██╔═══██╗')}`);
+    this.log(`${chalk.blue(' ███████╔╝')}${chalk.green(' ████████║    ██║    ███████╔╝ ╚█████╗     ██║    ██████╗   ███████╔╝')}`);
+    this.log(`${chalk.blue(' ██╔════╝ ')}${chalk.green(' ██╔═══██║    ██║    ██╔════╝   ╚═══██╗    ██║    ██╔═══╝   ██╔══██║')}`);
+    this.log(`${chalk.blue(' ██║      ')}${chalk.green(' ██║   ██║ ████████╗ ██║       ██████╔╝    ██║    ████████╗ ██║  ╚██╗')}`);
+    this.log(`${chalk.blue(' ╚═╝      ')}${chalk.green(' ╚═╝   ╚═╝ ╚═══════╝ ╚═╝       ╚═════╝     ╚═╝    ╚═══════╝ ╚═╝   ╚═╝')}\n`);
+    this.log(chalk.white('Welcome to PHipster ') + chalk.yellow(`v${packagejs.version}`));
     this.log(chalk.white(`Application files will be generated in folder: ${chalk.yellow(process.cwd())}`));
     if (process.cwd() === this.getUserHome()) {
         this.log(chalk.red.bold('\n️⚠️  WARNING ⚠️  You are in your HOME folder!'));
-        this.log(chalk.red('This can cause problems, you should always create a new directory and run the khipster command from here.'));
+        this.log(chalk.red('This can cause problems, you should always create a new directory and run the phipster command from here.'));
         this.log(chalk.white(`See the troubleshooting section at ${chalk.yellow('https://www.jhipster.tech/installation/')}`));
     }
     this.log(
@@ -42,7 +42,7 @@ function displayLogo() {
     );
     this.log(
         chalk.white(
-            `  If you find KHipster useful, consider sponsoring the our parent project at ${chalk.yellow(
+            `  If you find PHipster useful, consider sponsoring the our parent project at ${chalk.yellow(
                 'https://opencollective.com/generator-jhipster'
             )}`
         )

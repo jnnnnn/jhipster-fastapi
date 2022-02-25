@@ -1,7 +1,7 @@
 {
-    "name": "generator-jhipster-kotlin",
+    "name": "generator-jhipster-fastapi",
     "version": "1.14.0",
-    "description": "A Kotlin based JHipster (KHipster)",
+    "description": "A Kotlin based JHipster (PHipster)",
     "keywords": [
         "kotlin",
         "java",
@@ -9,18 +9,18 @@
         "yeoman-generator",
         "jhipster-blueprint"
     ],
-    "homepage": "https://github.com/jhipster/jhipster-kotlin#readme",
+    "homepage": "https://github.com/jhipster/jhipster-fastapi#readme",
     "bugs": {
-        "url": "https://github.com/jhipster/jhipster-kotlin/issues"
+        "url": "https://github.com/jhipster/jhipster-fastapi/issues"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/jhipster/jhipster-kotlin"
+        "url": "git+https://github.com/jhipster/jhipster-fastapi"
     },
     "license": "Apache-2.0",
-    "author": "Sendil Kumar N <sendilkumarn@live.com> (https://sendilkumarn.com)",
+    "author": "jnnnnn",
     "bin": {
-        "khipster": "cli/khipster.js"
+        "phipster": "cli/phipster.js"
     },
     "scripts": {
         "prettier:format": "prettier --write \"{,**/}*.{js,json,md,yml}\"",

@@ -19,6 +19,6 @@
         "testFrameworks": [
             "gatling"
         ],
-        "blueprint": "generator-jhipster-kotlin"
+        "blueprint": "generator-jhipster-fastapi"
     }
 }

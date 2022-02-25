@@ -1,3 +1,5 @@
+// JTODO
+
 /**
  * Copyright 2013-2020 the original author or authors from the JHipster project.
  *
@@ -384,7 +386,7 @@ function writeFiles() {
 
         writeEnumFiles() {
             // TODO replace this with proper function.
-            const fetchFromInstalledKHipster = subpath => path.join(__dirname, subpath);
+            const fetchFromInstalledPHipster = subpath => path.join(__dirname, subpath);
             this.fields.forEach(field => {
                 if (!field.fieldIsEnum) {
                     return;
@@ -399,7 +401,7 @@ function writeFiles() {
                 };
                 // eslint-disable-next-line no-console
                 if (!this.skipServer) {
-                    const pathToTemplateFile = `${fetchFromInstalledKHipster(
+                    const pathToTemplateFile = `${fetchFromInstalledPHipster(
                         'templates'
                     )}/${SERVER_MAIN_SRC_KOTLIN_DIR}package/domain/enumeration/Enum.kt.ejs`;
                     this.template(

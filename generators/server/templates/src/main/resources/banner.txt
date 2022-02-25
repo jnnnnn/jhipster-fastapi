@@ -5,5 +5,5 @@ ${AnsiColor.GREEN}██╔═██╗ ${AnsiColor.BRIGHT_YELLOW}██╔═�
 ${AnsiColor.GREEN}██║  ██╗${AnsiColor.BRIGHT_YELLOW}██║  ██║██║██║     ███████║   ██║   ███████╗██║  ██║
 ${AnsiColor.GREEN}╚═╝  ╚═╝${AnsiColor.BRIGHT_YELLOW}╚═╝  ╚═╝╚═╝╚═╝     ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
 
-${AnsiColor.BRIGHT_BLUE}:: KHipster 🤓  :: Running Spring Boot ${spring-boot.version} :: with awesome kotlin
-:: https://www.khipster.dev ::${AnsiColor.DEFAULT}
+${AnsiColor.BRIGHT_BLUE}:: PHipster 🤓  :: Running Spring Boot ${spring-boot.version} :: with awesome kotlin
+:: https://www.phipster.dev ::${AnsiColor.DEFAULT}

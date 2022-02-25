@@ -8,9 +8,9 @@
 
 ### Step 2 ✌️ : to setup JHipster-Kotlin generator
 
-`git clone https://github.com/jhipster/jhipster-kotlin`
+`git clone https://github.com/jhipster/jhipster-fastapi`
 
-`cd jhipster-kotlin`
+`cd jhipster-fastapi`
 
 `npm install | yarn`
 
@@ -20,13 +20,13 @@
 
 ### Step 3 🤟 : before generating your application, go to your application folder
 
-`yarn link "generator-jhipster-kotlin"`
+`yarn link "generator-jhipster-fastapi"`
 
 or
 
-`npm link "generator-jhipster-kotlin"`
+`npm link "generator-jhipster-fastapi"`
 
-( 🏁 Kudos, you have done it. It is the time to generate the application `khipster` )
+( 🏁 Kudos, you have done it. It is the time to generate the application `phipster` )
 
 ✨✨✨✨ You are rocking ✨✨✨✨
 

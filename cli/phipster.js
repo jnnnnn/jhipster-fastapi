@@ -28,7 +28,7 @@ const minimumNodeVersion = packageJson.engines.node;
 if (!semver.satisfies(currentNodeVersion, minimumNodeVersion)) {
     /* eslint-disable no-console */
     logger.error(
-        `You are running Node version ${currentNodeVersion}\nKHipster requires Node version ${minimumNodeVersion}\nPlease update your version of Node.`
+        `You are running Node version ${currentNodeVersion}\nPHipster requires Node version ${minimumNodeVersion}\nPlease update your version of Node.`
     );
     /* eslint-enable  */
 }
@@ -77,7 +77,7 @@ function requireCLI(preferLocal) {
             if (__dirname !== path.dirname(localCLI)) {
                 // load local version
                 /* eslint-disable import/no-dynamic-require */
-                logger.info("Using KHipster version installed locally in current project's node_modules");
+                logger.info("Using PHipster version installed locally in current project's node_modules");
                 require(localCLI);
                 return;
             }

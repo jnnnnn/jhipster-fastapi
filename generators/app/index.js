@@ -24,15 +24,15 @@ module.exports = class extends BaseGenerator {
     constructor(args, opts) {
         super(args, { fromBlueprint: true, ...opts });
 
-        // This adds support for a `--skip-ktlint-format` flag
-        this.option('skip-ktlint-format', {
-            desc: 'Indicates to skip formatting using ktlint',
+        // This adds support for a `--skip-black-format` flag
+        this.option('skip-black-format', {
+            desc: 'Indicates to skip formatting using black',
             type: Boolean,
         });
     }
 
     get initializing() {
-        // Override logo when we run khipster command
+        // Override logo when we run phipster command
         const initializer = {
             ...super._initializing(),
             displayLogo,

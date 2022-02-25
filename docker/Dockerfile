@@ -1,10 +1,10 @@
 FROM ubuntu:20.04
 RUN \
-  # configure the "khipster" user
-  groupadd khipster && \
-  useradd khipster -s /bin/bash -m -g khipster -G sudo && \
-  echo 'khipster:khipster' |chpasswd && \
-  mkdir /home/khipster/app && \
+  # configure the "phipster" user
+  groupadd phipster && \
+  useradd phipster -s /bin/bash -m -g phipster -G sudo && \
+  echo 'phipster:phipster' |chpasswd && \
+  mkdir /home/phipster/app && \
   export DEBIAN_FRONTEND=noninteractive && \
   export TZ=Europe\Paris && \
   ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
@@ -23,28 +23,28 @@ RUN \
   # cleanup
   apt-get clean && \
   rm -rf \
-    /home/khipster/.cache/ \
+    /home/phipster/.cache/ \
     /var/lib/apt/lists/* \
     /tmp/* \
     /var/tmp/*
 
 RUN \
   # install the blueprint
-  npm install -g generator-jhipster-kotlin && \
-  # fix khipster user permissions
-  chown -R khipster:khipster \
-    /home/khipster \
+  npm install -g generator-jhipster-fastapi && \
+  # fix phipster user permissions
+  chown -R phipster:phipster \
+    /home/phipster \
     /usr/local/lib/node_modules && \
   # cleanup
   rm -rf \
-    /home/khipster/.cache/ \
+    /home/phipster/.cache/ \
     /var/lib/apt/lists/* \
     /tmp/* \
     /var/tmp/*
 
 # expose the working directory
-USER khipster
+USER phipster
 ENV PATH $PATH:/usr/bin
-WORKDIR "/home/khipster/app"
-VOLUME ["/home/khipster/app"]
-CMD khipster
+WORKDIR "/home/phipster/app"
+VOLUME ["/home/phipster/app"]
+CMD phipster

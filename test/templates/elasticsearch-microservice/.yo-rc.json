@@ -28,6 +28,6 @@
     "clientPackageManager": "npm",
     "skipClient": true,
     "skipUserManagement": true,
-    "blueprint": "generator-jhipster-kotlin"
+    "blueprint": "generator-jhipster-fastapi"
   }
 }

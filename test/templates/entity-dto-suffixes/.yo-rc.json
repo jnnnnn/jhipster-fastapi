@@ -24,6 +24,6 @@
     ],
     "entitySuffix": "XXX",
     "dtoSuffix": "YYY",
-    "blueprint": "generator-jhipster-kotlin"
+    "blueprint": "generator-jhipster-fastapi"
   }
 }

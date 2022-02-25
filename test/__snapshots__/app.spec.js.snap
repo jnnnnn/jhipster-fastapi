@@ -8344,7 +8344,7 @@ Object {
 }
 `;
 
-exports[`JHipster generator Default configuration with Gradle with ktlint-format creates expected default files for gradle 1`] = `
+exports[`JHipster generator Default configuration with Gradle with black-format creates expected default files for gradle 1`] = `
 Object {
   ".browserslistrc": Object {
     "stateCleared": "modified",
@@ -9684,7 +9684,7 @@ Object {
 }
 `;
 
-exports[`JHipster generator Default configuration with Maven with ktlint-format creates expected default files for angularX 1`] = `
+exports[`JHipster generator Default configuration with Maven with black-format creates expected default files for angularX 1`] = `
 Object {
   ".browserslistrc": Object {
     "stateCleared": "modified",

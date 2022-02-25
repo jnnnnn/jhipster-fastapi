@@ -26,7 +26,7 @@ module.exports = class extends EntityServerGenerator {
         super(args, { ...options, fromBlueprint: true }, features); // fromBlueprint variable is important
         const jhContext = (this.jhipsterContext = this.options.jhipsterContext);
         if (!jhContext) {
-            this.error(`This is a JHipster blueprint and should be used only like ${chalk.yellow('jhipster --blueprint kotlin')}`);
+            this.error(`This is a JHipster blueprint and should be used only like ${chalk.yellow('jhipster --blueprint fastapi')}`);
         }
 
         this.loadAppConfig();

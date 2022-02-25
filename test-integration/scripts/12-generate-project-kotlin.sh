@@ -23,7 +23,7 @@ if [[ "$JHI_ENTITY" == "jdl" ]]; then
     done
     cd "$JHI_FOLDER_APP"
     ls -la "$JHI_FOLDER_APP"/
-    npm link generator-jhipster-kotlin
+    npm link generator-jhipster-fastapi
     eval "$JHI_CLI import-jdl *.jdl --no-insight $@"
 
 elif [[ "$JHI_APP" == "jdl" ]]; then
@@ -54,7 +54,7 @@ elif [[ "$JHI_APP" == "jdl" ]]; then
     
     ls -la "$JHI_FOLDER_APP"/
     cd "$JHI_FOLDER_APP"
-    npm link generator-jhipster-kotlin
+    npm link generator-jhipster-fastapi
     eval "$JHI_CLI import-jdl *.jdl --no-insight $@"
 
 else
@@ -69,7 +69,7 @@ else
         echo "skipping config file"
     fi
     cd "$JHI_FOLDER_APP"
-    npm link generator-jhipster-kotlin
+    npm link generator-jhipster-fastapi
     eval "$JHI_CLI --force --no-insight --skip-checks --with-entities $@"
 
 fi

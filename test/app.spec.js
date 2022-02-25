@@ -45,7 +45,7 @@ describe('JHipster generator', () => {
                         withGeneratedFlag: true,
                         blueprints: 'kotlin',
                         jhiPrefix: 'test',
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -93,7 +93,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -179,7 +179,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -209,7 +209,7 @@ describe('JHipster generator', () => {
             });
         });
 
-        describe('Maven with ktlint-format', () => {
+        describe('Maven with black-format', () => {
             let runResult;
             before(async () => {
                 runResult = await helpers
@@ -217,7 +217,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -259,7 +259,7 @@ describe('JHipster generator', () => {
             });
         });
 
-        describe('Gradle with ktlint-format', () => {
+        describe('Gradle with black-format', () => {
             let runResult;
             before(async () => {
                 runResult = await helpers
@@ -267,7 +267,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -306,7 +306,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -347,7 +347,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -391,7 +391,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -435,7 +435,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -479,7 +479,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -521,7 +521,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -565,7 +565,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -604,7 +604,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -646,7 +646,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -687,7 +687,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -734,7 +734,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -777,7 +777,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -818,7 +818,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -857,7 +857,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -898,7 +898,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -940,7 +940,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -983,7 +983,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1025,7 +1025,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1067,7 +1067,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1117,7 +1117,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1170,7 +1170,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1224,7 +1224,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1263,7 +1263,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1304,7 +1304,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1344,7 +1344,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1381,7 +1381,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1426,7 +1426,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1464,7 +1464,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1504,7 +1504,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1547,7 +1547,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1595,7 +1595,7 @@ describe('JHipster generator', () => {
                     skipServer: true,
                     db: 'postgresql',
                     auth: 'jwt',
-                    'skip-ktlint-format': true,
+                    'skip-black-format': true,
                 })
                 .withPrompts({
                     baseName: 'jhipster',
@@ -1632,7 +1632,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                         skipClient: true,
                     })
@@ -1688,7 +1688,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                         skipClient: true,
                     })
@@ -1731,7 +1731,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                         skipClient: true,
                         skipUserManagement: true,
@@ -1776,7 +1776,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1817,7 +1817,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1858,7 +1858,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1900,7 +1900,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1944,7 +1944,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -1991,7 +1991,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -2032,7 +2032,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -2073,7 +2073,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -2116,7 +2116,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({
@@ -2157,7 +2157,7 @@ describe('JHipster generator', () => {
                     .withOptions({
                         jhiprefix: 'test',
                         withgeneratedflag: true,
-                        'skip-ktlint-format': true,
+                        'skip-black-format': true,
                         blueprints: 'kotlin',
                     })
                     .withPrompts({

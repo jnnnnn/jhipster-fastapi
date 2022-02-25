@@ -31,8 +31,8 @@ env:
     JHI_DISABLE_WEBPACK_LOGS: true
     JHI_E2E_HEADLESS: true
     JHI_FOLDER_APP: ${{ github.workspace }}/app
-    JHI_HOME: ${{ github.workspace }}/generator-jhipster-kotlin
-    KOTLIN_JHI_SCRIPTS: ${{ github.workspace }}/generator-jhipster-kotlin/test-integration/scripts
+    JHI_HOME: ${{ github.workspace }}/generator-jhipster-fastapi
+    KOTLIN_JHI_SCRIPTS: ${{ github.workspace }}/generator-jhipster-fastapi/test-integration/scripts
     NG_CLI_ANALYTICS: 'false'
     JHI_GITHUB_CI: true
     FORCE_COLOR: 1
@@ -136,15 +136,15 @@ jobs:
             #----------------------------------------------------------------------
             # Install all tools and check configuration
             #----------------------------------------------------------------------
-            - name: 'SETUP: Checkout generator-jhipster-kotlin'
+            - name: 'SETUP: Checkout generator-jhipster-fastapi'
               uses: actions/checkout@v2
               with:
-                  path: generator-jhipster-kotlin
+                  path: generator-jhipster-fastapi
                   fetch-depth: 2
             - name: 'SETUP: Create required structure'
               run: |
                   mkdir app
-                  mkdir -p base/generator-jhipster-kotlin
+                  mkdir -p base/generator-jhipster-fastapi
                   mkdir -p base/app
               working-directory: ${{ github.workspace }}
             - uses: actions/setup-node@v2.5.0
@@ -210,7 +210,7 @@ jobs:
             # Install JHipster and generate project+entities
             #----------------------------------------------------------------------
             - name: 'GENERATION: install JHipster'
-              run: $KOTLIN_JHI_SCRIPTS/10-install-jhipster-kotlin.sh
+              run: $KOTLIN_JHI_SCRIPTS/10-install-jhipster-fastapi.sh
             - name: 'GENERATION: config'
               run: $KOTLIN_JHI_SCRIPTS/11-generate-config.sh
             - name: 'GENERATION: project'
@@ -220,16 +220,16 @@ jobs:
             #----------------------------------------------------------------------
             # Detect changes against base commit
             #----------------------------------------------------------------------
-            - name: 'MERGE: Install base generator-jhipster-kotlin'
+            - name: 'MERGE: Install base generator-jhipster-fastapi'
               continue-on-error: true
               id: base-checkout
               if: github.event.pull_request
-              working-directory: ${{ github.workspace }}/base/generator-jhipster-kotlin
+              working-directory: ${{ github.workspace }}/base/generator-jhipster-fastapi
               run: |
-                  git clone ${{ github.workspace }}/generator-jhipster-kotlin .
+                  git clone ${{ github.workspace }}/generator-jhipster-fastapi .
                   git checkout @~1
                   git log
-                  npm uninstall -g generator-jhipster-kotlin
+                  npm uninstall -g generator-jhipster-fastapi
                   npm install
                   npm install -g .
             - name: 'MERGE: merge base project'

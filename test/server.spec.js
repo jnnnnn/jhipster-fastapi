@@ -21,7 +21,7 @@ describe('JHipster server generator', () => {
                     'from-cli': true,
                     skipInstall: true,
                     skipChecks: true,
-                    'skip-ktlint-format': true,
+                    'skip-black-format': true,
                     skipClient: true,
                 })
                 .withPrompts({
@@ -79,7 +79,7 @@ describe('JHipster server generator', () => {
                     'from-cli': true,
                     skipInstall: true,
                     skipChecks: true,
-                    'skip-ktlint-format': true,
+                    'skip-black-format': true,
                     skipClient: true,
                 })
                 .withPrompts({
@@ -137,7 +137,7 @@ describe('JHipster server generator', () => {
                     'from-cli': true,
                     skipInstall: true,
                     skipChecks: true,
-                    'skip-ktlint-format': true,
+                    'skip-black-format': true,
                     skipClient: true,
                 })
                 .withPrompts({

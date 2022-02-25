@@ -14,7 +14,7 @@ init_var() {
     echo $result
 }
 
-# KHipster locations
+# PHipster locations
 
 # uri of repo
 if [[ "$JHI_REPO" == "" ]]; then
@@ -113,7 +113,7 @@ if [[ "$JHI_JDK" == "11" && "$JHI_GITHUB_CI" != "true" ]]; then
 fi
 
 if [[ "$JHI_CLI" == "" ]]; then
-    JHI_CLI=khipster
+    JHI_CLI=phipster
 fi
 
 # node version

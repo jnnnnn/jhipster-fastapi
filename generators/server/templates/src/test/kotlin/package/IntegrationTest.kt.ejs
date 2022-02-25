@@ -43,8 +43,8 @@ import org.springframework.boot.test.context.SpringBootTest
 /**
  * Base composite annotation for integration tests.
  */
-@kotlin.annotation.Target(AnnotationTarget.CLASS)
-@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
+@fastapi.annotation.Target(AnnotationTarget.CLASS)
+@fastapi.annotation.Retention(AnnotationRetention.RUNTIME)
 <%_ if (authenticationTypeOauth2) { _%>
 @SpringBootTest(classes = [<%= mainClass %>::class, TestSecurityConfiguration::class])
 <%_ } else { _%>

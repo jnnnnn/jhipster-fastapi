@@ -32,7 +32,7 @@ env:
     JHI_E2E_HEADLESS: true
     JHI_FOLDER_APP: ${{ github.workspace }}/app
     JHI_HOME: ${{ github.workspace }}/generator-jhipster-fastapi
-    KOTLIN_JHI_SCRIPTS: ${{ github.workspace }}/generator-jhipster-fastapi/test-integration/scripts
+    FASTAPI_JHI_SCRIPTS: ${{ github.workspace }}/generator-jhipster-fastapi/test-integration/scripts
     NG_CLI_ANALYTICS: 'false'
     JHI_GITHUB_CI: true
     FORCE_COLOR: 1
@@ -204,22 +204,22 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-cypress-
             - name: 'ENV: display variables'
-              run: $KOTLIN_JHI_SCRIPTS/01-display-configuration.sh
+              run: $FASTAPI_JHI_SCRIPTS/01-display-configuration.sh
             - name: 'TOOLS: configure tools installed by the system'
-              run: $KOTLIN_JHI_SCRIPTS/03-system.sh
+              run: $FASTAPI_JHI_SCRIPTS/03-system.sh
             - name: 'TOOLS: configure git'
-              run: $KOTLIN_JHI_SCRIPTS/04-git-config.sh
+              run: $FASTAPI_JHI_SCRIPTS/04-git-config.sh
             #----------------------------------------------------------------------
             # Install JHipster and generate project+entities
             #----------------------------------------------------------------------
             - name: 'GENERATION: install JHipster'
-              run: $KOTLIN_JHI_SCRIPTS/10-install-jhipster-fastapi.sh
+              run: $FASTAPI_JHI_SCRIPTS/10-install-jhipster-fastapi.sh
             - name: 'GENERATION: config'
-              run: $KOTLIN_JHI_SCRIPTS/11-generate-config.sh
+              run: $FASTAPI_JHI_SCRIPTS/11-generate-config.sh
             - name: 'GENERATION: project'
-              run: $KOTLIN_JHI_SCRIPTS/12-generate-project-kotlin.sh
+              run: $FASTAPI_JHI_SCRIPTS/12-generate-project-fastapi.sh
             - name: 'GENERATION: jhipster info'
-              run: $KOTLIN_JHI_SCRIPTS/14-jhipster-info.sh
+              run: $FASTAPI_JHI_SCRIPTS/14-jhipster-info.sh
             #----------------------------------------------------------------------
             # Detect changes against base commit
             #----------------------------------------------------------------------
@@ -241,10 +241,10 @@ jobs:
               if: steps.base-checkout.outcome == 'success'
               working-directory: ${{ github.workspace }}/base/app
               run: |
-                  $KOTLIN_JHI_SCRIPTS/11-generate-config.sh
+                  $FASTAPI_JHI_SCRIPTS/11-generate-config.sh
                   # 11-generate-entities.sh removes current dir, we need to switch to the new one
                   cd ../app
-                  $KOTLIN_JHI_SCRIPTS/12-generate-project-kotlin.sh --skip-install --skip-git
+                  $FASTAPI_JHI_SCRIPTS/12-generate-project-fastapi.sh --skip-install --skip-git
               env:
                   JHI_FOLDER_APP: ${{ github.workspace }}/base/app
             - name: 'MERGE: merge project diff'
@@ -307,7 +307,7 @@ jobs:
                   name: screenshots-${{ matrix.app-type }}
                   path: ${{ github.workspace }}/app/*/cypress/screenshots
             - name: 'ANALYSIS: Sonar analysis'
-              run: $KOTLIN_JHI_SCRIPTS/25-sonar-analyze.sh
+              run: $FASTAPI_JHI_SCRIPTS/25-sonar-analyze.sh
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

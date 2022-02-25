@@ -32,7 +32,7 @@ const expectedFiles = require('./utils/expected-files');
 
 const { CLIENT_MAIN_SRC_DIR, MAIN_DIR, SERVER_MAIN_RES_DIR } = constants;
 const NO_CACHE_PROVIDER = cacheProviders.NO;
-const SERVER_MAIN_KOTLIN_SRC_DIR = `${MAIN_DIR}kotlin/`;
+const SERVER_MAIN_FASTAPI_SRC_DIR = `${MAIN_DIR}fastapi/`;
 
 describe('JHipster generator', () => {
     context('Default configuration with', () => {
@@ -43,7 +43,7 @@ describe('JHipster generator', () => {
                     .create(path.join(__dirname, '../generators/app'))
                     .withOptions({
                         withGeneratedFlag: true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                         jhiPrefix: 'test',
                         'skip-black-format': true,
                     })
@@ -94,7 +94,7 @@ describe('JHipster generator', () => {
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -134,7 +134,7 @@ describe('JHipster generator', () => {
                 runResult = await helpers
                     .create(path.join(__dirname, '../generators/app'))
                     .withOptions({
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -180,7 +180,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -218,7 +218,7 @@ describe('JHipster generator', () => {
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -268,7 +268,7 @@ describe('JHipster generator', () => {
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -307,7 +307,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -348,7 +348,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -392,7 +392,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -436,7 +436,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -480,7 +480,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -522,7 +522,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -566,7 +566,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -605,7 +605,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -647,7 +647,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -688,7 +688,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: MICROSERVICE,
@@ -735,7 +735,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -778,7 +778,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -819,7 +819,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -858,7 +858,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -899,7 +899,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -941,7 +941,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -984,7 +984,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1026,7 +1026,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1068,7 +1068,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1118,7 +1118,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1171,7 +1171,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1225,7 +1225,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1250,9 +1250,9 @@ describe('JHipster generator', () => {
             });
 
             it('creates expected files with correct package names', () => {
-                assert.file([`${SERVER_MAIN_KOTLIN_SRC_DIR}com/otherpackage/JhipsterApp.kt`]);
-                assert.fileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/otherpackage/JhipsterApp.kt`, /package com\.otherpackage/);
-                assert.fileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/otherpackage/JhipsterApp.kt`, /class JhipsterApp/);
+                assert.file([`${SERVER_MAIN_FASTAPI_SRC_DIR}com/otherpackage/JhipsterApp.kt`]);
+                assert.fileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/otherpackage/JhipsterApp.kt`, /package com\.otherpackage/);
+                assert.fileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/otherpackage/JhipsterApp.kt`, /class JhipsterApp/);
             });
         });
 
@@ -1264,7 +1264,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: '21Points',
@@ -1290,10 +1290,10 @@ describe('JHipster generator', () => {
 
             it('creates expected files with default application name', () => {
                 assert.file([
-                    `${SERVER_MAIN_KOTLIN_SRC_DIR}com/otherpackage/Application.kt`,
-                    `${SERVER_MAIN_KOTLIN_SRC_DIR}com/otherpackage/ApplicationWebXml.kt`,
+                    `${SERVER_MAIN_FASTAPI_SRC_DIR}com/otherpackage/Application.kt`,
+                    `${SERVER_MAIN_FASTAPI_SRC_DIR}com/otherpackage/ApplicationWebXml.kt`,
                 ]);
-                assert.fileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/otherpackage/Application.kt`, /class Application/);
+                assert.fileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/otherpackage/Application.kt`, /class Application/);
             });
         });
 
@@ -1305,7 +1305,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'myapplication',
@@ -1345,7 +1345,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1382,7 +1382,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1427,7 +1427,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1465,7 +1465,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1505,7 +1505,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1548,7 +1548,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         baseName: 'jhipster',
@@ -1633,7 +1633,7 @@ describe('JHipster generator', () => {
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                         skipClient: true,
                     })
                     .withPrompts({
@@ -1689,7 +1689,7 @@ describe('JHipster generator', () => {
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                         skipClient: true,
                     })
                     .withPrompts({
@@ -1732,7 +1732,7 @@ describe('JHipster generator', () => {
                         jhiPrefix: 'test',
                         withGeneratedFlag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                         skipClient: true,
                         skipUserManagement: true,
                     })
@@ -1763,7 +1763,7 @@ describe('JHipster generator', () => {
                 assert.noFile(expectedFiles.userManagementServer);
             });
             it('creates SecurityConfiguration for default configuration with skip client and skip user management option enabled', () => {
-                assert.file(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/config/SecurityConfiguration.kt`);
+                assert.file(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/config/SecurityConfiguration.kt`);
             });
         });
     });
@@ -1777,7 +1777,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: GATEWAY,
@@ -1818,7 +1818,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: GATEWAY,
@@ -1859,7 +1859,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: MICROSERVICE,
@@ -1901,7 +1901,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: MONOLITH,
@@ -1945,7 +1945,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: MICROSERVICE,
@@ -1992,7 +1992,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: GATEWAY,
@@ -2033,7 +2033,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: GATEWAY,
@@ -2074,7 +2074,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: MICROSERVICE,
@@ -2117,7 +2117,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: GATEWAY,
@@ -2158,7 +2158,7 @@ describe('JHipster generator', () => {
                         jhiprefix: 'test',
                         withgeneratedflag: true,
                         'skip-black-format': true,
-                        blueprints: 'kotlin',
+                        blueprints: 'fastapi',
                     })
                     .withPrompts({
                         applicationType: MICROSERVICE,

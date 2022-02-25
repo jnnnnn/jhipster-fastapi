@@ -284,7 +284,7 @@ Object {
       "condition": [Function],
       "templates": Array [
         Object {
-          "file": "gradle/kotlin.gradle",
+          "file": "gradle/fastapi.gradle",
           "useBluePrint": true,
         },
       ],
@@ -300,7 +300,7 @@ Object {
   ],
   "serverJavaApp": Array [
     Object {
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/Application.kt",
@@ -311,7 +311,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/ApplicationWebXml.kt",
@@ -321,7 +321,7 @@ Object {
       ],
     },
     Object {
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/ArchTest.kt",
@@ -331,7 +331,7 @@ Object {
       ],
     },
     Object {
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/IntegrationTest.kt",
@@ -344,7 +344,7 @@ Object {
   "serverJavaAuthConfig": Array [
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/SpringSecurityAuditorAware.kt",
@@ -354,7 +354,7 @@ Object {
       ],
     },
     Object {
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/SecurityUtils.kt",
@@ -369,7 +369,7 @@ Object {
       ],
     },
     Object {
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/SecurityUtilsUnitTest.kt",
@@ -380,7 +380,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/jwt/TokenProvider.kt",
@@ -396,7 +396,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/jwt/JWTConfigurer.kt",
@@ -407,7 +407,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/jwt/JWTRelayGatewayFilterFactory.kt",
@@ -418,7 +418,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/SecurityConfiguration.kt",
@@ -429,7 +429,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/SecurityConfiguration_reactive.kt",
@@ -440,7 +440,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/PersistentTokenRememberMeServices.kt",
@@ -461,7 +461,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/oauth2/AudienceValidator.kt",
@@ -482,7 +482,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/oauth2/AudienceValidatorTest.kt",
@@ -498,7 +498,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/oauth2/AuthorizationHeaderUtilTest.kt",
@@ -509,7 +509,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/DomainUserDetailsService.kt",
@@ -525,7 +525,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/vm/LoginVM.kt",
@@ -541,7 +541,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/OpenApiConfiguration.kt",
@@ -552,7 +552,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/oauth2/CustomClaimConverter.kt",
@@ -563,7 +563,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/oauth2/CustomClaimConverterIT.kt",
@@ -575,7 +575,7 @@ Object {
   ],
   "serverJavaConfig": Array [
     Object {
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/aop/logging/LoggingAspect.kt",
@@ -626,7 +626,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/StaticResourcesWebConfiguration.kt",
@@ -637,7 +637,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/Constants.kt",
@@ -648,7 +648,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/ReactorConfiguration.kt",
@@ -659,7 +659,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/CacheConfiguration.kt",
@@ -670,7 +670,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/CacheFactoryConfiguration.kt",
@@ -681,7 +681,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/RedisTestContainerExtension.kt",
@@ -692,7 +692,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": [Function],
@@ -703,7 +703,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/LiquibaseConfiguration.kt",
@@ -714,7 +714,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/service/ColumnConverter.kt",
@@ -730,7 +730,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/repository/rowmapper/UserRowMapper.kt",
@@ -741,7 +741,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/repository/N1qlCouchbaseRepository.kt",
@@ -757,7 +757,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/repository/search/SearchCouchbaseRepository.kt",
@@ -768,7 +768,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/repository/CustomN1qlCouchbaseRepositoryTest.kt",
@@ -779,7 +779,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/repository/ReactiveN1qlCouchbaseRepository.kt",
@@ -795,7 +795,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/WebsocketConfiguration.kt",
@@ -811,7 +811,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/ElasticsearchConfiguration.kt",
@@ -824,7 +824,7 @@ Object {
   "serverJavaDomain": Array [
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/domain/AbstractAuditingEntity.kt",
@@ -837,7 +837,7 @@ Object {
   "serverJavaGateway": Array [
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/vm/RouteVM.kt",
@@ -853,7 +853,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/AuthInfoResource.kt",
@@ -869,7 +869,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/apidocs/GatewaySwaggerResourcesProvider.kt",
@@ -885,7 +885,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/filter/ModifyServersOpenApiFilterTest.kt",
@@ -904,7 +904,7 @@ Object {
   "serverJavaService": Array [
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/KafkaProperties.kt",
@@ -917,7 +917,7 @@ Object {
   "serverJavaServiceError": Array [
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/service/EmailAlreadyUsedException.kt",
@@ -940,7 +940,7 @@ Object {
   "serverJavaUserManagement": Array [
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/domain/User.kt",
@@ -951,7 +951,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/domain/Authority.kt",
@@ -982,7 +982,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/Constants.kt",
@@ -1008,7 +1008,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/service/mapper/UserMapper.kt",
@@ -1039,7 +1039,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/AccountResource.kt",
@@ -1050,7 +1050,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/service/UserServiceIT.kt",
@@ -1061,7 +1061,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/service/mapper/UserMapperTest.kt",
@@ -1082,7 +1082,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/AccountResourceIT_skipUserManagement.kt",
@@ -1093,7 +1093,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/AccountResourceIT_oauth2.kt",
@@ -1104,7 +1104,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/AccountResourceIT_oauth2.kt",
@@ -1115,7 +1115,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/repository/search/UserSearchRepository.kt",
@@ -1126,7 +1126,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/repository/search/UserSearchRepositoryMockConfiguration.kt",
@@ -1146,7 +1146,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/repository/UserRepository.kt",
@@ -1212,7 +1212,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/repository/search/UserSearchRepository.kt",
@@ -1223,7 +1223,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/repository/search/UserSearchRepositoryMockConfiguration.kt",
@@ -1234,7 +1234,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/jwt/TokenProviderTest.kt",
@@ -1250,7 +1250,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/UserJWTControllerIT.kt",
@@ -1261,7 +1261,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/cucumber/stepdefs/UserStepDefs.kt",
@@ -1287,7 +1287,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/service/MailServiceIT.kt",
@@ -1323,7 +1323,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/AccountResourceIT.kt",
@@ -1334,7 +1334,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/AccountResourceIT_oauth2.kt",
@@ -1344,7 +1344,7 @@ Object {
       ],
     },
     Object {
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/WithUnauthenticatedMockUser.kt",
@@ -1357,7 +1357,7 @@ Object {
   "serverJavaWeb": Array [
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/ClientForwardController.kt",
@@ -1368,7 +1368,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/filter/SpaWebFilter.kt",
@@ -1379,7 +1379,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/KafkaResource.kt",
@@ -1391,7 +1391,7 @@ Object {
   ],
   "serverJavaWebError": Array [
     Object {
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/errors/BadRequestAlertException.kt",
@@ -1417,7 +1417,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/errors/EmailAlreadyUsedException.kt",
@@ -1440,7 +1440,7 @@ Object {
   "serverJavaWebsocket": Array [
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/websocket/ActivityService.kt",
@@ -1458,7 +1458,7 @@ Object {
   "serverMicroservice": Array [
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/FeignConfiguration.kt",
@@ -1474,7 +1474,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/oauth2/AuthorizationHeaderUtil.kt",
@@ -1505,7 +1505,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/RestTemplateConfiguration.kt",
@@ -1600,7 +1600,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/main/kotlin/",
+      "path": "src/main/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/dbmigrations/InitialSetupMigration.kt",
@@ -1681,7 +1681,7 @@ Object {
   "serverTestFw": Array [
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/CassandraKeyspaceIT.kt",
@@ -1697,7 +1697,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/DatabaseConfigurationIT.kt",
@@ -1708,7 +1708,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/AbstractNeo4jIT.kt",
@@ -1718,7 +1718,7 @@ Object {
       ],
     },
     Object {
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/TestUtil.kt",
@@ -1739,7 +1739,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/ClientForwardControllerTest.kt",
@@ -1750,7 +1750,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/timezone/HibernateTimeZoneIT.kt",
@@ -1796,7 +1796,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/ReactiveSqlTestContainerExtension.kt",
@@ -1807,7 +1807,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/WebConfigurerTest.kt",
@@ -1823,7 +1823,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/StaticResourcesWebConfigurerTest.kt",
@@ -1841,7 +1841,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/LogoutResourceIT.kt",
@@ -1860,7 +1860,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/cucumber/CucumberIT.kt",
@@ -1892,7 +1892,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/security/DomainUserDetailsServiceIT.kt",
@@ -1903,7 +1903,7 @@ Object {
     },
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/web/rest/KafkaResourceIT.kt",
@@ -1916,7 +1916,7 @@ Object {
   "serverTestReactive": Array [
     Object {
       "condition": [Function],
-      "path": "src/test/kotlin/",
+      "path": "src/test/fastapi/",
       "templates": Array [
         Object {
           "file": "package/config/JHipsterBlockHoundIntegration.kt",

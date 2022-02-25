@@ -120,7 +120,7 @@ import org.springframework.security.test.web.reactive.server.SecurityMockServerC
 
 <%_ if (reactive) { _%>
 
-import kotlin.test.assertNotNull
+import fastapi.test.assertNotNull
 <%_ } _%>
 <%_ if (databaseTypeSql && reactive) { _%>
 import <%= packageName %>.config.SYSTEM_ACCOUNT

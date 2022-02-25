@@ -102,7 +102,7 @@ import <%= entityAbsolutePackage %>.service.mapper.<%= entityClass %>Mapper
 import <%= entityAbsolutePackage %>.service.criteria.<%= entityClass %>Criteria
 <%_ } _%>
 
-import kotlin.test.assertNotNull
+import fastapi.test.assertNotNull
 
 <%_ if (databaseTypeSql && reactive) { _%>
 import org.junit.jupiter.api.AfterEach

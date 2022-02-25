@@ -4,8 +4,8 @@ const helpers = require('yeoman-test');
 const fse = require('fs-extra');
 const constants = require('generator-jhipster/generators/generator-constants');
 
-const SERVER_MAIN_SRC_DIR = `${constants.MAIN_DIR}kotlin/`;
-const SERVER_TEST_SRC_DIR = `${constants.TEST_DIR}kotlin/`;
+const SERVER_MAIN_SRC_DIR = `${constants.MAIN_DIR}fastapi/`;
+const SERVER_TEST_SRC_DIR = `${constants.TEST_DIR}fastapi/`;
 
 describe('JHipster generator spring-controller', () => {
     describe('creates spring controller', () => {

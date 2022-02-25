@@ -7,8 +7,8 @@ const CLIENT_TEST_SRC_DIR = constants.CLIENT_TEST_SRC_DIR;
 const SERVER_MAIN_RES_DIR = constants.SERVER_MAIN_RES_DIR;
 const SERVER_TEST_RES_DIR = constants.SERVER_TEST_RES_DIR;
 const DOCKER_DIR = constants.DOCKER_DIR;
-const SERVER_MAIN_SRC_DIR = `${constants.MAIN_DIR}kotlin/`;
-const SERVER_TEST_SRC_DIR = `${constants.TEST_DIR}kotlin/`;
+const SERVER_MAIN_SRC_DIR = `${constants.MAIN_DIR}fastapi/`;
+const SERVER_TEST_SRC_DIR = `${constants.TEST_DIR}fastapi/`;
 
 const expectedFiles = {
     entity: {
@@ -162,7 +162,7 @@ const expectedFiles = {
         'gradle/wrapper/gradle-wrapper.jar',
         'gradle/wrapper/gradle-wrapper.properties',
         'checkstyle.xml',
-        'gradle/kotlin.gradle',
+        'gradle/fastapi.gradle',
     ],
 
     maven: ['pom.xml', 'mvnw', 'mvnw.cmd', '.mvn/wrapper/maven-wrapper.jar', '.mvn/wrapper/maven-wrapper.properties', 'checkstyle.xml'],

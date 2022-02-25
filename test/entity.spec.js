@@ -17,8 +17,8 @@ const NO_DTO = MapperTypes.NO;
 
 const { CLIENT_MAIN_SRC_DIR, MAIN_DIR, SERVER_MAIN_RES_DIR, TEST_DIR } = constants;
 
-const SERVER_MAIN_KOTLIN_SRC_DIR = `${MAIN_DIR}kotlin/`;
-const SERVER_TEST_KOTLIN_SRC_DIR = `${TEST_DIR}kotlin/`;
+const SERVER_MAIN_FASTAPI_SRC_DIR = `${MAIN_DIR}fastapi/`;
+const SERVER_TEST_FASTAPI_SRC_DIR = `${TEST_DIR}fastapi/`;
 
 describe('JHipster generator for entity', () => {
     context('creation from CLI', () => {
@@ -44,7 +44,7 @@ describe('JHipster generator for entity', () => {
                 });
 
                 it('does creates search files', () => {
-                    assert.file(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/repository/search/FooSearchRepository.kt`);
+                    assert.file(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/repository/search/FooSearchRepository.kt`);
                     assert.file(expectedFiles.server);
                     assert.file(expectedFiles.gatling);
                 });
@@ -68,8 +68,8 @@ describe('JHipster generator for entity', () => {
                 });
 
                 it('does creates search files', () => {
-                    assert.file(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/repository/search/FooSearchRepository.kt`);
-                    assert.file(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/repository/search/SortToFieldSortBuilderConverter.kt`);
+                    assert.file(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/repository/search/FooSearchRepository.kt`);
+                    assert.file(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/repository/search/SortToFieldSortBuilderConverter.kt`);
                     assert.file(expectedFiles.server);
                     assert.file(expectedFiles.gatling);
                 });
@@ -93,8 +93,8 @@ describe('JHipster generator for entity', () => {
                 });
 
                 it('does creates search files', () => {
-                    assert.file(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/repository/search/FooSearchRepository.kt`);
-                    assert.file(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/repository/search/SortToFieldSortBuilderConverter.kt`);
+                    assert.file(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/repository/search/FooSearchRepository.kt`);
+                    assert.file(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/repository/search/SortToFieldSortBuilderConverter.kt`);
                     assert.file(expectedFiles.server);
                     assert.file(expectedFiles.gatling);
                 });
@@ -113,7 +113,7 @@ describe('JHipster generator for entity', () => {
                             creationTimestamp: '2016-01-20',
                             withEntities: true,
                             'skip-black-format': true,
-                            blueprints: 'kotlin',
+                            blueprints: 'fastapi',
                         })
                         .withArguments(['foo'])
                         .withPrompts({
@@ -143,7 +143,7 @@ describe('JHipster generator for entity', () => {
                         })
                         .withOptions({
                             'skip-black-format': true,
-                            blueprints: 'kotlin',
+                            blueprints: 'fastapi',
                         })
                         .withArguments(['foo'])
                         .withPrompts({
@@ -158,28 +158,28 @@ describe('JHipster generator for entity', () => {
                 it('creates expected files with suffix', () => {
                     assert.file([
                         '.jhipster/Foo.json',
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/domain/FooXXX.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/repository/FooRepository.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/web/rest/FooResource.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/dto/FooYYY.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/mapper/FooMapper.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/FooService.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/domain/FooXXX.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/repository/FooRepository.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/web/rest/FooResource.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/dto/FooYYY.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/mapper/FooMapper.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/FooService.kt`,
                     ]);
                 });
 
                 it('correctly writes the repository', () => {
                     assert.fileContent(
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/repository/FooRepository.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/repository/FooRepository.kt`,
                         'interface FooRepository'
                     );
                 });
 
                 it('correctly writes the entity', () => {
-                    assert.fileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/domain/FooXXX.kt`, 'data class FooXXX');
+                    assert.fileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/domain/FooXXX.kt`, 'data class FooXXX');
                 });
 
                 it('correctly writes the dto file', () => {
-                    assert.fileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/dto/FooYYY.kt`, 'data class FooYYY');
+                    assert.fileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/dto/FooYYY.kt`, 'data class FooYYY');
                 });
             });
 
@@ -192,7 +192,7 @@ describe('JHipster generator for entity', () => {
                         })
                         .withOptions({
                             'skip-black-format': true,
-                            blueprints: 'kotlin',
+                            blueprints: 'fastapi',
                         })
                         .withArguments(['foo'])
                         .withPrompts({
@@ -206,23 +206,23 @@ describe('JHipster generator for entity', () => {
                 it('creates expected files with suffix', () => {
                     assert.file([
                         '.jhipster/Foo.json',
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/domain/FooXXX.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/repository/FooRepository.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/web/rest/FooResource.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/FooService.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/domain/FooXXX.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/repository/FooRepository.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/web/rest/FooResource.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/FooService.kt`,
                     ]);
 
                     assert.noFile([
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/dto/FooYYY.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/mapper/FooMapper.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/dto/FooYYY.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/mapper/FooMapper.kt`,
                     ]);
 
                     assert.fileContent(
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/repository/FooRepository.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/repository/FooRepository.kt`,
                         'interface FooRepository'
                     );
 
-                    assert.fileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/domain/FooXXX.kt`, 'data class FooXXX');
+                    assert.fileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/domain/FooXXX.kt`, 'data class FooXXX');
                 });
             });
         });
@@ -335,8 +335,8 @@ describe('JHipster generator for entity', () => {
                     assert.file(expectedFiles.clientNg2);
                     assert.file(expectedFiles.gatling);
                     assert.file([
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/FooService.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/impl/FooServiceImpl.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/FooService.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/impl/FooServiceImpl.kt`,
                     ]);
                 });
             });
@@ -366,9 +366,9 @@ describe('JHipster generator for entity', () => {
                     assert.file(expectedFiles.clientNg2);
                     assert.file(expectedFiles.gatling);
                     assert.file([
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/dto/FooDTO.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/mapper/FooMapper.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/FooService.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/dto/FooDTO.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/mapper/FooMapper.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/FooService.kt`,
                     ]);
                 });
             });
@@ -700,7 +700,7 @@ describe('JHipster generator for entity', () => {
                         `${CLIENT_MAIN_SRC_DIR}app/entities/sampleMicroservice/bar/bar.module.ts`,
                         'SampleMicroserviceBarModule'
                     );
-                    assert.noFile(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/web/rest/BarResource.kt`);
+                    assert.noFile(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/web/rest/BarResource.kt`);
                 });
                 it('generates search specific content for template', () => {
                     assert.fileContent(
@@ -740,7 +740,7 @@ describe('JHipster generator for entity', () => {
                     assert.file(`${CLIENT_MAIN_SRC_DIR}i18n/en/testRootFoo.json`);
                     assert.file(expectedFiles.clientNg2WithRootFolder);
                     assert.noFile(expectedFiles.gatling);
-                    assert.noFile(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/web/rest/FooResource.kt`);
+                    assert.noFile(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/web/rest/FooResource.kt`);
                 });
             });
 
@@ -897,7 +897,7 @@ describe('JHipster generator for entity', () => {
                     assert.file(expectedFiles.gatling);
                 });
                 it('generates OpenAPI annotations on domain model', () => {
-                    assert.fileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/domain/Foo.kt`, /@Schema/);
+                    assert.fileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/domain/Foo.kt`, /@Schema/);
                 });
             });
         });
@@ -947,7 +947,7 @@ describe('JHipster generator for entity', () => {
                             force: true,
                             skipDbChangelog: true,
                             'skip-black-format': true,
-                            blueprints: 'kotlin',
+                            blueprints: 'fastapi',
                         });
                 });
 
@@ -981,23 +981,23 @@ describe('JHipster generator for entity', () => {
                     assert.file(expectedFiles.server);
                     assert.noFile(expectedFiles.clientNg2);
                     assert.file([
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/dto/FooDTO.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/mapper/FooMapper.kt`,
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/FooService.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/dto/FooDTO.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/mapper/FooMapper.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/FooService.kt`,
                     ]);
                 });
                 it('generates OpenAPI annotations on DTO', () => {
-                    assert.noFileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/domain/Foo.kt`, /@Schema/);
-                    assert.fileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/dto/FooDTO.kt`, /@Schema/);
+                    assert.noFileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/domain/Foo.kt`, /@Schema/);
+                    assert.fileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/dto/FooDTO.kt`, /@Schema/);
                 });
                 it('shall not generate search specific artifacts because elastic search is false on top level', () => {
                     assert.noFile(expectedFiles.entitySearchSpecific);
                     // and no annotation in the domain class
                     assert.noFileContent(
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/domain/Foo.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/domain/Foo.kt`,
                         /@org.springframework.data.elasticsearch.annotations.Document/
                     );
-                    assert.noFileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/FooService.kt`, /FooSearchRepository/);
+                    assert.noFileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/FooService.kt`, /FooSearchRepository/);
                 });
             });
         });
@@ -1017,7 +1017,7 @@ describe('JHipster generator for entity', () => {
                     assert.noFile(expectedFiles.entitySearchSpecific);
                     // and no annotation in the domain class
                     assert.noFileContent(
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/domain/Foo.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/domain/Foo.kt`,
                         /@org.springframework.data.elasticsearch.annotations.Document/
                     );
                 });
@@ -1040,11 +1040,11 @@ describe('JHipster generator for entity', () => {
                     assert.file(expectedFiles.entitySearchSpecific);
                     // and no annotation in the domain class
                     assert.fileContent(
-                        `${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/domain/Foo.kt`,
+                        `${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/domain/Foo.kt`,
                         /@org.springframework.data.elasticsearch.annotations.Document/
                     );
                     // and repository shall be also used in service
-                    assert.fileContent(`${SERVER_MAIN_KOTLIN_SRC_DIR}com/mycompany/myapp/service/FooService.kt`, /FooSearchRepository/);
+                    assert.fileContent(`${SERVER_MAIN_FASTAPI_SRC_DIR}com/mycompany/myapp/service/FooService.kt`, /FooSearchRepository/);
                 });
             });
         });
@@ -1074,11 +1074,11 @@ describe('JHipster generator for entity', () => {
 
                 it('creates reproducible backend test', () => {
                     assert.fileContent(
-                        `${SERVER_TEST_KOTLIN_SRC_DIR}com/mycompany/myapp/web/rest/FooResourceIT.kt`,
+                        `${SERVER_TEST_FASTAPI_SRC_DIR}com/mycompany/myapp/web/rest/FooResourceIT.kt`,
                         /DEFAULT_NUMBER_PATTERN_REQUIRED = "1504"/
                     );
                     assert.fileContent(
-                        `${SERVER_TEST_KOTLIN_SRC_DIR}com/mycompany/myapp/web/rest/FooResourceIT.kt`,
+                        `${SERVER_TEST_FASTAPI_SRC_DIR}com/mycompany/myapp/web/rest/FooResourceIT.kt`,
                         /UPDATED_NUMBER_PATTERN_REQUIRED = "2841"/
                     );
                 });

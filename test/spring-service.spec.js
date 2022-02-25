@@ -4,7 +4,7 @@ const helpers = require('yeoman-test');
 const fse = require('fs-extra');
 const constants = require('generator-jhipster/generators/generator-constants');
 
-const SERVER_MAIN_SRC_DIR = `${constants.MAIN_DIR}kotlin/`;
+const SERVER_MAIN_SRC_DIR = `${constants.MAIN_DIR}fastapi/`;
 
 describe.skip('JHipster generator service', () => {
     describe('creates service without interface', () => {

@@ -1,10 +1,10 @@
 {
     "name": "generator-jhipster-fastapi",
     "version": "1.14.0",
-    "description": "A Kotlin based JHipster (PHipster)",
+    "description": "A FastAPI based JHipster (PHipster)",
     "keywords": [
-        "kotlin",
-        "java",
+        "python",
+        "fastapi",
         "hipster",
         "yeoman-generator",
         "jhipster-blueprint"

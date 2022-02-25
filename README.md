@@ -1,7 +1,7 @@
 
 ## About
 
-> JHipster is a development platform to quickly generate, develop, and deploy modern web applications and microservice architectures. We support many frontend technologies, including Angular, React, and Vue. We even have mobile app support for Ionic and React Native! On the backend, we support Spring Boot (with Java or Kotlin), Micronaut, Quarkus, Node.js, and .NET. For deployment, we embrace cloud native principles with Docker and Kubernetes. Deployment support exists for AWS, Azure, Cloud Foundry, Google Cloud Platform, Heroku, and OpenShift.
+> JHipster is a development platform to quickly generate, develop, and deploy modern web applications and microservice architectures. We support many frontend technologies, including Angular, React, and Vue. We even have mobile app support for Ionic and React Native! On the backend, we support Spring Boot (with Java or FastAPI), Micronaut, Quarkus, Node.js, and .NET. For deployment, we embrace cloud native principles with Docker and Kubernetes. Deployment support exists for AWS, Azure, Cloud Foundry, Google Cloud Platform, Heroku, and OpenShift.
 
 Documentation and information about PHipster is available [here](https://www.phipster.dev/)
 
@@ -26,9 +26,17 @@ Full documentation and information about JHipster is available [here](https://ww
 [![NPM version][npm-image]][npm-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 
-This project adds Kotlin to the JHipster application 😎. It is based on JHipster Blueprint 🔵.
+This project adds Python-FastAPI to the JHipster application 😎. It is based on JHipster Blueprint 🔵.
 
 ### 🚀 How to get started
+
+Install nvm. Then: 
+
+    nvm install --lts
+    nvm use --lts
+    npm install -g pnpm
+    pnpm install -g generator-jhipster-fastapi yo 
+    phipster
 
 Install the package with `npm install -g generator-jhipster-fastapi`
 
@@ -49,7 +57,7 @@ wget https://github.com/jhipster/jhipster-fastapi/raw/main/docker/Dockerfile
 Build the Docker images:
 
 ```bash
-docker build -t jhipster-generator-kotlin:latest .
+docker build -t jhipster-generator-fastapi:latest .
 ```
 
 Make a folder where you want to generate the Service:
@@ -62,24 +70,26 @@ cd service
 Run the generator from image to generate service:
 
 ```bash
-docker run -it --rm -v $PWD:/home/phipster/app jhipster-generator-kotlin
+docker run -it --rm -v $PWD:/home/phipster/app jhipster-generator-fastapi
 ```
 
 Run and attach interactive shell to the generator docker container to work from inside the running container:
 
 ```bash
-docker run -it --rm -v $PWD:/home/phipster/app jhipster-generator-kotlin /bin/bash
+docker run -it --rm -v $PWD:/home/phipster/app jhipster-generator-fastapi /bin/bash
 ```
 
 ### 🚦 What we have now
 
-✅ General App generation - `phipster`
+Nothing... future:
 
-✅ Spring Controller - `phipster spring-controller <controller-name>`
+❌ General App generation - `phipster`
 
-✅ Spring Service - `phipster spring-service <service-name>`
+❌ Spring Controller - `phipster spring-controller <controller-name>`
 
-✅ Entity generation - `phipster entity <entity-name>`
+❌ Spring Service - `phipster spring-service <service-name>`
+
+❌ Entity generation - `phipster entity <entity-name>`
 
 ### ❤️ for community
 

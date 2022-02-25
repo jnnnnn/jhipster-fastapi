@@ -1,7 +1,7 @@
 Description:
-    Creates a new JHipster service: this is a simple transactional Spring service bean written on Kotlin.
+    Creates a new JHipster service: this is a simple transactional Spring service bean written on FastAPI.
 
  Example:
     jhipster spring-service Foo
      This will create:
-        src/main/kotlin/package/service/FooService.kt
+        src/main/fastapi/package/service/FooService.kt

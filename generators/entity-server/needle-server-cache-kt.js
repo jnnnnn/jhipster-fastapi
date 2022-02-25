@@ -20,7 +20,7 @@ const chalk = require('chalk');
 const needleServerCache = require('generator-jhipster/generators/server/needle-api/needle-server-cache');
 const constants = require('generator-jhipster/generators/generator-constants');
 
-const SERVER_MAIN_SRC_KOTLIN_DIR = `${constants.MAIN_DIR}kotlin/`;
+const SERVER_MAIN_SRC_FASTAPI_DIR = `${constants.MAIN_DIR}fastapi/`;
 
 module.exports = class extends needleServerCache {
     addEntityToCache(entityClass, relationships, packageName, packageFolder, cacheProvider) {
@@ -40,7 +40,7 @@ module.exports = class extends needleServerCache {
 
     addEntryToCache(entry, packageFolder, cacheProvider) {
         const errorMessage = chalk.yellow(`\nUnable to add ${entry} to CacheConfiguration.kt file.`);
-        const cachePath = `${SERVER_MAIN_SRC_KOTLIN_DIR}${packageFolder}/config/CacheConfiguration.kt`;
+        const cachePath = `${SERVER_MAIN_SRC_FASTAPI_DIR}${packageFolder}/config/CacheConfiguration.kt`;
 
         if (cacheProvider === 'ehcache') {
             const needle = 'jhipster-needle-ehcache-add-entry';

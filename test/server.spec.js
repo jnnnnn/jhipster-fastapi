@@ -17,7 +17,7 @@ describe('JHipster server generator', () => {
                 .create(path.join(__dirname, '../generators/app'))
                 .withOptions({
                     withGeneratedFlag: true,
-                    blueprints: 'kotlin',
+                    blueprints: 'fastapi',
                     'from-cli': true,
                     skipInstall: true,
                     skipChecks: true,
@@ -75,7 +75,7 @@ describe('JHipster server generator', () => {
                 .create(path.join(__dirname, '../generators/app'))
                 .withOptions({
                     withGeneratedFlag: true,
-                    blueprints: 'kotlin',
+                    blueprints: 'fastapi',
                     'from-cli': true,
                     skipInstall: true,
                     skipChecks: true,
@@ -133,7 +133,7 @@ describe('JHipster server generator', () => {
                 .create(path.join(__dirname, '../generators/app'))
                 .withOptions({
                     withGeneratedFlag: true,
-                    blueprints: 'kotlin',
+                    blueprints: 'fastapi',
                     'from-cli': true,
                     skipInstall: true,
                     skipChecks: true,

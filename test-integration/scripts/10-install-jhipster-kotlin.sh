@@ -34,7 +34,7 @@ cp "$KHI_SCRIPTS"/00-init-env.sh "$JHI_SCRIPTS"/
 cp -R "$KHI_SAMPLES"/* "$JHI_SAMPLES"/
 
 #-------------------------------------------------------------------------------
-# Install JHipster Kotlin
+# Install JHipster FastAPI
 #-------------------------------------------------------------------------------
 cd "$JHI_HOME"/
 

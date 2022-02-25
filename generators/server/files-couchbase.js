@@ -26,8 +26,8 @@ const DOCKER_DIR = constants.DOCKER_DIR;
 // const SERVER_MAIN_SRC_DIR = constants.SERVER_MAIN_SRC_DIR;
 const SERVER_MAIN_RES_DIR = constants.SERVER_MAIN_RES_DIR;
 // const SERVER_TEST_SRC_DIR = constants.SERVER_TEST_SRC_DIR;
-const SERVER_MAIN_KOTLIN_SRC_DIR = `${constants.MAIN_DIR}kotlin/`;
-const SERVER_TEST_SRC_KOTLIN_DIR = `${constants.TEST_DIR}kotlin/`;
+const SERVER_MAIN_FASTAPI_SRC_DIR = `${constants.MAIN_DIR}fastapi/`;
+const SERVER_TEST_SRC_FASTAPI_DIR = `${constants.TEST_DIR}fastapi/`;
 
 const shouldSkipUserManagement = generator =>
     generator.skipUserManagement && (generator.applicationType !== MONOLITH || generator.authenticationType !== OAUTH2);
@@ -41,7 +41,7 @@ const couchbaseFiles = {
     ],
     serverJavaConfig: [
         {
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/couchbase/CustomCouchbaseRepositoryFactory.kt',
@@ -77,7 +77,7 @@ const couchbaseFiles = {
         },
         {
             condition: generator => !shouldSkipUserManagement(generator) && generator.authenticationType === SESSION && !generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/repository/PersistentTokenRepository_couchbase.kt',
@@ -88,7 +88,7 @@ const couchbaseFiles = {
         },
         {
             condition: generator => generator.searchEngine === COUCHBASE,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/repository/JHipsterCouchbaseRepositoryTest.kt',
@@ -116,7 +116,7 @@ const couchbaseFiles = {
     ],
     serverTestFw: [
         {
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/CouchbaseTestContainerExtension.kt',

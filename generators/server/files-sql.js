@@ -18,13 +18,13 @@
  */
 const constants = require('generator-jhipster/generators/generator-constants');
 
-const SERVER_MAIN_KOTLIN_SRC_DIR = `${constants.MAIN_DIR}kotlin/`;
+const SERVER_MAIN_FASTAPI_SRC_DIR = `${constants.MAIN_DIR}fastapi/`;
 
 const sqlFiles = {
     reactiveJavaUserManagement: [
         {
             condition: generator => generator.reactive && (!generator.skipUserManagement || generator.authenticationTypeOauth2),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/repository/UserSqlHelper.kt',

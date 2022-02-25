@@ -32,7 +32,7 @@ const { COUCHBASE, MONGODB, NEO4J, SQL } = require('generator-jhipster/jdl/jhips
 const { CAFFEINE, EHCACHE, HAZELCAST, INFINISPAN, MEMCACHED, REDIS } = require('generator-jhipster/jdl/jhipster/cache-types');
 const { KAFKA } = require('generator-jhipster/jdl/jhipster/message-broker-types');
 // const { addSectionsCondition, mergeSections } = require('generator-jhipster/generators/utils');
-const kotlinConstants = require('../generator-kotlin-constants');
+const fastapiConstants = require('../generator-fastapi-constants');
 const { writeCouchbaseFiles } = require('./files-couchbase');
 const { writeSqlFiles } = require('./files-sql');
 
@@ -40,8 +40,8 @@ const { writeSqlFiles } = require('./files-sql');
 const NO_DATABASE = databaseTypes.NO;
 const INTERPOLATE_REGEX = constants.INTERPOLATE_REGEX;
 const SERVER_MAIN_SRC_DIR = constants.SERVER_MAIN_SRC_DIR;
-const SERVER_MAIN_KOTLIN_SRC_DIR = `${constants.MAIN_DIR}kotlin/`;
-const SERVER_TEST_SRC_KOTLIN_DIR = `${constants.TEST_DIR}kotlin/`;
+const SERVER_MAIN_FASTAPI_SRC_DIR = `${constants.MAIN_DIR}fastapi/`;
+const SERVER_TEST_SRC_FASTAPI_DIR = `${constants.TEST_DIR}fastapi/`;
 const SERVER_MAIN_RES_DIR = constants.SERVER_MAIN_RES_DIR;
 const SERVER_TEST_SRC_DIR = constants.SERVER_TEST_SRC_DIR;
 const SERVER_TEST_RES_DIR = constants.SERVER_TEST_RES_DIR;
@@ -61,10 +61,10 @@ const serverFiles = {
         ...baseServerFiles.serverBuild,
         {
             condition: generator => generator.buildTool === GRADLE,
-            templates: [{ file: 'gradle/kotlin.gradle', useBluePrint: true }],
+            templates: [{ file: 'gradle/fastapi.gradle', useBluePrint: true }],
         },
         {
-            templates: [{ file: `${kotlinConstants.DETEKT_CONFIG_FILE}`, useBluePrint: true }],
+            templates: [{ file: `${fastapiConstants.DETEKT_CONFIG_FILE}`, useBluePrint: true }],
         },
     ],
     serverResource: [
@@ -119,7 +119,7 @@ const serverFiles = {
             condition: generator =>
                 generator.databaseType === MONGODB &&
                 (!generator.skipUserManagement || (generator.skipUserManagement && generator.authenticationType === OAUTH2)),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/dbmigrations/InitialSetupMigration.kt',
@@ -131,7 +131,7 @@ const serverFiles = {
         {
             condition: generator =>
                 generator.databaseType === NEO4J && (!generator.skipUserManagement || generator.authenticationType === OAUTH2),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/neo4j/Neo4jMigrations.kt',
@@ -182,7 +182,7 @@ const serverFiles = {
             condition: generator =>
                 !generator.reactive &&
                 (generator.databaseTypeSql || generator.databaseType === MONGODB || generator.databaseType === COUCHBASE),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/security/SpringSecurityAuditorAware.kt',
@@ -192,7 +192,7 @@ const serverFiles = {
             ],
         },
         {
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/security/SecurityUtils.kt',
@@ -207,7 +207,7 @@ const serverFiles = {
             ],
         },
         {
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/security/SecurityUtilsUnitTest.kt',
@@ -218,7 +218,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeJwt,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/security/jwt/TokenProvider.kt',
@@ -239,7 +239,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeJwt && !generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/security/jwt/JWTConfigurer.kt',
@@ -250,7 +250,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.reactive && generator.applicationTypeGateway && generator.authenticationTypeJwt,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/security/jwt/JWTRelayGatewayFilterFactory.kt',
@@ -261,7 +261,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/SecurityConfiguration.kt',
@@ -272,7 +272,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/SecurityConfiguration_reactive.kt',
@@ -283,7 +283,7 @@ const serverFiles = {
         },
         {
             condition: generator => !shouldSkipUserManagement(generator) && generator.authenticationTypeSession && !generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/security/PersistentTokenRememberMeServices.kt',
@@ -303,7 +303,7 @@ const serverFiles = {
                 generator.authenticationType === SESSION &&
                 !generator.reactive &&
                 generator.databaseType !== COUCHBASE,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/repository/PersistentTokenRepository.kt',
@@ -314,7 +314,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeOauth2,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/security/oauth2/AudienceValidator.kt',
@@ -335,7 +335,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeOauth2,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/security/oauth2/AudienceValidatorTest.kt',
@@ -354,7 +354,7 @@ const serverFiles = {
                 !generator.reactive &&
                 generator.authenticationTypeOauth2 &&
                 (generator.applicationTypeMicroservice || generator.applicationTypeGateway),
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/security/oauth2/AuthorizationHeaderUtilTest.kt',
@@ -365,7 +365,7 @@ const serverFiles = {
         },
         {
             condition: generator => !shouldSkipUserManagement(generator) && generator.authenticationType !== OAUTH2,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/security/DomainUserDetailsService.kt',
@@ -381,7 +381,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.applicationType !== MICROSERVICE && generator.authenticationTypeJwt,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/rest/vm/LoginVM.kt',
@@ -397,7 +397,7 @@ const serverFiles = {
         },
         {
             condition: generator => !!generator.enableSwaggerCodegen,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/OpenApiConfiguration.kt',
@@ -408,7 +408,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.reactive && generator.authenticationTypeOauth2 && generator.applicationType === MONOLITH,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/security/oauth2/CustomClaimConverter.kt',
@@ -419,7 +419,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.reactive && generator.authenticationTypeOauth2 && generator.applicationType === MONOLITH,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/security/oauth2/CustomClaimConverterIT.kt',
@@ -432,7 +432,7 @@ const serverFiles = {
     serverJavaGateway: [
         {
             condition: generator => generator.applicationTypeGateway && generator.serviceDiscoveryType,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/rest/vm/RouteVM.kt',
@@ -449,7 +449,7 @@ const serverFiles = {
         {
             condition: generator =>
                 generator.authenticationTypeOauth2 && (generator.applicationType === MONOLITH || generator.applicationTypeGateway),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/rest/AuthInfoResource.kt',
@@ -465,7 +465,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.applicationTypeGateway && generator.serviceDiscoveryType && generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/filter/ModifyServersOpenApiFilter.kt',
@@ -476,7 +476,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.applicationTypeGateway && generator.serviceDiscoveryType && generator.reactive,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/filter/ModifyServersOpenApiFilterTest.kt',
@@ -492,7 +492,7 @@ const serverFiles = {
                 !generator.reactive &&
                 (generator.applicationTypeMicroservice || generator.applicationTypeGateway) &&
                 generator.authenticationTypeJwt,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/FeignConfiguration.kt',
@@ -511,7 +511,7 @@ const serverFiles = {
                 !generator.reactive &&
                 generator.authenticationTypeOauth2 &&
                 (generator.applicationTypeMicroservice || generator.applicationTypeGateway),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/security/oauth2/AuthorizationHeaderUtil.kt',
@@ -542,7 +542,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.reactive && generator.applicationTypeGateway && !generator.serviceDiscoveryType,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/RestTemplateConfiguration.kt',
@@ -560,7 +560,7 @@ const serverFiles = {
     ...baseServerFiles.serverResource.serverMicroserviceAndGateway,
     serverJavaApp: [
         {
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/Application.kt',
@@ -571,7 +571,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/ApplicationWebXml.kt',
@@ -581,7 +581,7 @@ const serverFiles = {
             ],
         },
         {
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/ArchTest.kt',
@@ -591,7 +591,7 @@ const serverFiles = {
             ],
         },
         {
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/IntegrationTest.kt',
@@ -601,7 +601,7 @@ const serverFiles = {
             ],
         },
         // {
-        //     path: SERVER_MAIN_KOTLIN_SRC_DIR,
+        //     path: SERVER_MAIN_FASTAPI_SRC_DIR,
         //     templates: [
         //         {
         //             file: 'package/GeneratedByJHipster.kt',
@@ -613,7 +613,7 @@ const serverFiles = {
     ],
     serverJavaConfig: [
         {
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/aop/logging/LoggingAspect.kt',
@@ -664,7 +664,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipClient && !generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/StaticResourcesWebConfiguration.kt',
@@ -675,7 +675,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipUserManagement || [SQL, MONGODB, COUCHBASE, NEO4J].includes(generator.databaseType),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/Constants.kt',
@@ -686,7 +686,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/ReactorConfiguration.kt',
@@ -699,7 +699,7 @@ const serverFiles = {
             condition: generator =>
                 [EHCACHE, CAFFEINE, HAZELCAST, INFINISPAN, MEMCACHED, REDIS].includes(generator.cacheProvider) ||
                 generator.applicationTypeGateway,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/CacheConfiguration.kt',
@@ -710,7 +710,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.cacheProvider === INFINISPAN,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/CacheFactoryConfiguration.kt',
@@ -721,7 +721,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.cacheProviderRedis,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/RedisTestContainerExtension.kt',
@@ -732,7 +732,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.databaseType !== NO_DATABASE,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: generator => `package/config/DatabaseConfiguration_${generator.jhipsterConfig.databaseType}.kt`,
@@ -743,7 +743,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.databaseTypeSql,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/LiquibaseConfiguration.kt',
@@ -754,7 +754,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.databaseTypeSql && generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/service/ColumnConverter.kt',
@@ -773,7 +773,7 @@ const serverFiles = {
                 generator.databaseType === SQL &&
                 generator.reactive &&
                 (!generator.skipUserManagement || generator.authenticationType === OAUTH2),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/repository/rowmapper/UserRowMapper.kt',
@@ -784,7 +784,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.websocket === SPRING_WEBSOCKET,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/WebsocketConfiguration.kt',
@@ -800,7 +800,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.searchEngineElasticsearch,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/ElasticsearchConfiguration.kt',
@@ -813,7 +813,7 @@ const serverFiles = {
     serverJavaDomain: [
         {
             condition: generator => [SQL, MONGODB, NEO4J, COUCHBASE].includes(generator.databaseType),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/domain/AbstractAuditingEntity.kt',
@@ -827,7 +827,7 @@ const serverFiles = {
     serverJavaServiceError: [
         {
             condition: generator => !generator.skipUserManagement,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/service/EmailAlreadyUsedException.kt',
@@ -850,7 +850,7 @@ const serverFiles = {
     serverJavaService: [
         {
             condition: generator => generator.messageBroker === KAFKA,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/KafkaProperties.kt',
@@ -862,7 +862,7 @@ const serverFiles = {
     ],
     serverJavaWebError: [
         {
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/rest/errors/BadRequestAlertException.kt',
@@ -888,7 +888,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipUserManagement,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/rest/errors/EmailAlreadyUsedException.kt',
@@ -911,7 +911,7 @@ const serverFiles = {
     serverJavaWeb: [
         {
             condition: generator => !generator.skipClient && !generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/rest/ClientForwardController.kt',
@@ -922,7 +922,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipClient && generator.reactive,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/filter/SpaWebFilter.kt',
@@ -933,7 +933,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.messageBroker === KAFKA,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/rest/KafkaResource.kt',
@@ -947,7 +947,7 @@ const serverFiles = {
     serverJavaWebsocket: [
         {
             condition: generator => generator.websocket === SPRING_WEBSOCKET,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/websocket/ActivityService.kt',
@@ -965,7 +965,7 @@ const serverFiles = {
     serverTestReactive: [
         {
             condition: generator => generator.reactive,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/config/JHipsterBlockHoundIntegration.kt',
@@ -983,7 +983,7 @@ const serverFiles = {
     springBootOauth2: [
         {
             condition: generator => generator.authenticationTypeOauth2 && generator.applicationTypeMonolith,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/OAuth2Configuration.kt',
@@ -994,7 +994,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeOauth2 && !generator.applicationTypeMicroservice,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: generator => `package/web/filter/OAuth2${generator.reactive ? 'Reactive' : ''}RefreshTokensWebFilter.kt`,
@@ -1006,7 +1006,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeOauth2 && !generator.applicationTypeMicroservice,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/test/util/OAuth2TestUtil.kt',
@@ -1018,7 +1018,7 @@ const serverFiles = {
     ],
     serverTestFw: [
         {
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             condition: generator => generator.databaseTypeNeo4j,
             templates: [
                 {
@@ -1029,7 +1029,7 @@ const serverFiles = {
             ],
         },
         {
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             condition: generator => generator.databaseTypeCassandra,
             templates: [
                 {
@@ -1045,7 +1045,7 @@ const serverFiles = {
             ],
         },
         {
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/TestUtil.kt',
@@ -1066,7 +1066,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipClient && !generator.reactive,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/ClientForwardControllerTest.kt',
@@ -1077,7 +1077,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.databaseTypeSql && !generator.reactive,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/config/timezone/HibernateTimeZoneIT.kt',
@@ -1112,7 +1112,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.reactiveSqlTestContainers,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/ReactiveSqlTestContainerExtension.kt',
@@ -1124,7 +1124,7 @@ const serverFiles = {
         {
             // TODO : add these tests to reactive
             condition: generator => !generator.reactive,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/config/WebConfigurerTest.kt',
@@ -1141,7 +1141,7 @@ const serverFiles = {
         {
             // TODO : add these tests to reactive
             condition: generator => !generator.skipClient && !generator.reactive,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/config/StaticResourcesWebConfigurerTest.kt',
@@ -1158,7 +1158,7 @@ const serverFiles = {
         {
             condition: generator =>
                 generator.authenticationTypeOauth2 && (generator.applicationType === MONOLITH || generator.applicationTypeGateway),
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/LogoutResourceIT.kt',
@@ -1178,7 +1178,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.cucumberTests,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 // Create Cucumber test files
                 {
@@ -1208,7 +1208,7 @@ const serverFiles = {
         },
         {
             condition: generator => !shouldSkipUserManagement(generator) && generator.authenticationType !== OAUTH2,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 // Create auth config test files
                 {
@@ -1220,7 +1220,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.messageBroker === KAFKA,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/KafkaResourceIT.kt',
@@ -1234,7 +1234,7 @@ const serverFiles = {
     serverJavaUserManagement: [
         {
             condition: generator => generator.isUsingBuiltInUser(),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/domain/User.kt',
@@ -1245,7 +1245,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.isUsingBuiltInAuthority(),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/domain/Authority.kt',
@@ -1275,7 +1275,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeOauth2,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/config/Constants.kt',
@@ -1301,7 +1301,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeOauth2 && generator.databaseType !== 'no',
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/service/mapper/UserMapper.kt',
@@ -1332,7 +1332,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.skipUserManagement && [MONOLITH, GATEWAY].includes(generator.applicationType),
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/web/rest/AccountResource.kt',
@@ -1343,7 +1343,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeOauth2,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/service/UserServiceIT.kt',
@@ -1354,7 +1354,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeOauth2 && generator.databaseType !== 'no',
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/service/mapper/UserMapperTest.kt',
@@ -1378,7 +1378,7 @@ const serverFiles = {
                 generator.skipUserManagement &&
                 generator.authenticationType !== OAUTH2 &&
                 [MONOLITH, GATEWAY].includes(generator.applicationType),
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/AccountResourceIT_skipUserManagement.kt',
@@ -1392,7 +1392,7 @@ const serverFiles = {
                 generator.skipUserManagement &&
                 generator.authenticationTypeOauth2 &&
                 [MONOLITH, GATEWAY].includes(generator.applicationType),
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/AccountResourceIT_oauth2.kt',
@@ -1406,7 +1406,7 @@ const serverFiles = {
                 generator.skipUserManagement &&
                 generator.authenticationTypeOauth2 &&
                 [MONOLITH, GATEWAY].includes(generator.applicationType),
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/AccountResourceIT_oauth2.kt',
@@ -1417,7 +1417,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeOauth2 && generator.searchEngineElasticsearch,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/repository/search/UserSearchRepository.kt',
@@ -1428,7 +1428,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeOauth2 && generator.searchEngineElasticsearch,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/repository/search/UserSearchRepositoryMockConfiguration.kt',
@@ -1448,7 +1448,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipUserManagement,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 /* User management java domain files */
                 {
@@ -1519,7 +1519,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipUserManagement && generator.searchEngineElasticsearch,
-            path: SERVER_MAIN_KOTLIN_SRC_DIR,
+            path: SERVER_MAIN_FASTAPI_SRC_DIR,
             templates: [
                 {
                     file: 'package/repository/search/UserSearchRepository.kt',
@@ -1530,7 +1530,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipUserManagement && generator.searchEngineElasticsearch,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/repository/search/UserSearchRepositoryMockConfiguration.kt',
@@ -1541,7 +1541,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.authenticationTypeJwt,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/management/SecurityMetersServiceTests.kt',
@@ -1567,7 +1567,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.applicationType !== MICROSERVICE && generator.authenticationTypeJwt,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/UserJWTControllerIT.kt',
@@ -1578,7 +1578,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipUserManagement && generator.cucumberTests,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/cucumber/stepdefs/UserStepDefs.kt',
@@ -1613,7 +1613,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipUserManagement,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/service/MailServiceIT.kt',
@@ -1649,7 +1649,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipUserManagement && generator.authenticationType !== OAUTH2,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/AccountResourceIT.kt',
@@ -1660,7 +1660,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.skipUserManagement && generator.authenticationTypeOauth2,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/AccountResourceIT_oauth2.kt',
@@ -1670,7 +1670,7 @@ const serverFiles = {
             ],
         },
         {
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/WithUnauthenticatedMockUser.kt',
@@ -1712,55 +1712,55 @@ function writeFiles() {
 
         modifyFiles() {
             if (this.buildTool === GRADLE) {
-                this.addGradleProperty('kotlin_version', kotlinConstants.KOTLIN_VERSION);
-                this.addGradleProperty('mapstruct_version', kotlinConstants.MAPSTRUCT_VERSION);
-                this.addGradleProperty('detekt_version', kotlinConstants.DETEKT_VERSION);
-                this.addGradlePlugin('org.jetbrains.kotlin', 'kotlin-gradle-plugin', '${kotlin_version}');
-                this.addGradlePlugin('org.jetbrains.kotlin', 'kotlin-allopen', '${kotlin_version}');
+                this.addGradleProperty('fastapi_version', fastapiConstants.FASTAPI_VERSION);
+                this.addGradleProperty('mapstruct_version', fastapiConstants.MAPSTRUCT_VERSION);
+                this.addGradleProperty('detekt_version', fastapiConstants.DETEKT_VERSION);
+                this.addGradlePlugin('org.jetbrains.fastapi', 'fastapi-gradle-plugin', '${fastapi_version}');
+                this.addGradlePlugin('org.jetbrains.fastapi', 'fastapi-allopen', '${fastapi_version}');
                 if (this.databaseTypeSql) {
-                    this.addGradlePlugin('org.jetbrains.kotlin', 'kotlin-noarg', '${kotlin_version}');
+                    this.addGradlePlugin('org.jetbrains.fastapi', 'fastapi-noarg', '${fastapi_version}');
                 }
-                this.addGradlePlugin('org.jlleitschuh.gradle', 'ktlint-gradle', kotlinConstants.KTLINT_GRADLE_VERSION);
+                this.addGradlePlugin('org.jlleitschuh.gradle', 'ktlint-gradle', fastapiConstants.KTLINT_GRADLE_VERSION);
                 this.addGradlePlugin('io.gitlab.arturbosch.detekt', 'detekt-gradle-plugin', '${detekt_version}');
 
-                this.applyFromGradleScript('gradle/kotlin');
+                this.applyFromGradleScript('gradle/fastapi');
             }
 
             if (this.buildTool === MAVEN) {
-                this.addMavenProperty('kotlin.version', kotlinConstants.KOTLIN_VERSION);
-                this.addMavenProperty('mapstruct.version', kotlinConstants.MAPSTRUCT_VERSION);
-                this.addMavenProperty('ktlint-maven-plugin.version', kotlinConstants.KTLINT_MAVEN_VERSION);
-                this.addMavenProperty('maven-antrun-plugin.version', kotlinConstants.MAVEN_ANTRUN_VERSION);
-                this.addMavenProperty('detekt.version', kotlinConstants.DETEKT_VERSION);
-                this.addMavenProperty('detekt.configFile', `$\{project.basedir}/${kotlinConstants.DETEKT_CONFIG_FILE}`);
+                this.addMavenProperty('fastapi.version', fastapiConstants.FASTAPI_VERSION);
+                this.addMavenProperty('mapstruct.version', fastapiConstants.MAPSTRUCT_VERSION);
+                this.addMavenProperty('ktlint-maven-plugin.version', fastapiConstants.KTLINT_MAVEN_VERSION);
+                this.addMavenProperty('maven-antrun-plugin.version', fastapiConstants.MAVEN_ANTRUN_VERSION);
+                this.addMavenProperty('detekt.version', fastapiConstants.DETEKT_VERSION);
+                this.addMavenProperty('detekt.configFile', `$\{project.basedir}/${fastapiConstants.DETEKT_CONFIG_FILE}`);
                 this.addMavenProperty('detekt.xmlReportFile', '${project.build.directory}/detekt-reports/detekt.xml');
-                this.addMavenProperty('sonar.kotlin.detekt.reportPaths', '${detekt.xmlReportFile}');
+                this.addMavenProperty('sonar.fastapi.detekt.reportPaths', '${detekt.xmlReportFile}');
                 this.addMavenProperty('sonar.coverage.jacoco.xmlReportPaths', '${jacoco.reportFolder}/jacoco.xml');
 
-                this.addMavenDependencyManagement('org.jetbrains.kotlin', 'kotlin-stdlib', '${kotlin.version}');
-                this.addMavenDependencyManagement('org.jetbrains.kotlin', 'kotlin-stdlib-jdk8', '${kotlin.version}');
+                this.addMavenDependencyManagement('org.jetbrains.fastapi', 'fastapi-stdlib', '${fastapi.version}');
+                this.addMavenDependencyManagement('org.jetbrains.fastapi', 'fastapi-stdlib-jdk8', '${fastapi.version}');
 
-                this.addMavenDependency('org.jetbrains.kotlinx', 'kotlinx-coroutines-debug');
-                this.addMavenDependency('org.jetbrains.kotlinx', 'kotlinx-coroutines-reactor');
-                this.addMavenDependency('io.projectreactor.kotlin', 'reactor-kotlin-extensions');
+                this.addMavenDependency('org.jetbrains.fastapix', 'fastapix-coroutines-debug');
+                this.addMavenDependency('org.jetbrains.fastapix', 'fastapix-coroutines-reactor');
+                this.addMavenDependency('io.projectreactor.fastapi', 'reactor-fastapi-extensions');
 
                 this.addMavenDependency('com.fasterxml.jackson.datatype', 'jackson-datatype-json-org');
-                this.addMavenDependency('org.jetbrains.kotlin', 'kotlin-stdlib-jdk8', '${kotlin.version}');
-                this.addMavenDependency('org.jetbrains.kotlin', 'kotlin-reflect', '${kotlin.version}');
+                this.addMavenDependency('org.jetbrains.fastapi', 'fastapi-stdlib-jdk8', '${fastapi.version}');
+                this.addMavenDependency('org.jetbrains.fastapi', 'fastapi-reflect', '${fastapi.version}');
                 this.addMavenDependency(
-                    'org.jetbrains.kotlin',
-                    'kotlin-test-junit',
-                    '${kotlin.version}',
+                    'org.jetbrains.fastapi',
+                    'fastapi-test-junit',
+                    '${fastapi.version}',
                     '            <scope>test</scope>'
                 );
                 this.addMavenDependency(
-                    'com.nhaarman.mockitokotlin2',
-                    'mockito-kotlin',
-                    kotlinConstants.MOCKITO_KOTLIN_VERSION,
+                    'com.nhaarman.mockitofastapi2',
+                    'mockito-fastapi',
+                    fastapiConstants.MOCKITO_FASTAPI_VERSION,
                     '            <scope>test</scope>'
                 );
                 // NOTE: Add proper indentation of the configuration tag
-                const kotlinOther = `                <executions>
+                const fastapiOther = `                <executions>
                     <execution>
                         <id>kapt</id>
                         <goals>
@@ -1768,7 +1768,7 @@ function writeFiles() {
                         </goals>
                         <configuration>
                             <sourceDirs>
-                                <sourceDir>$\{project.basedir}/src/main/kotlin</sourceDir>
+                                <sourceDir>$\{project.basedir}/src/main/fastapi</sourceDir>
                                 <sourceDir>$\{project.basedir}/src/main/java</sourceDir>
                             </sourceDirs>
                             <annotationProcessorPaths>
@@ -1813,7 +1813,7 @@ function writeFiles() {
                         </goals>
                         <configuration>
                             <sourceDirs>
-                                <sourceDir>$\{project.basedir}/src/main/kotlin</sourceDir>
+                                <sourceDir>$\{project.basedir}/src/main/fastapi</sourceDir>
                                 <sourceDir>$\{project.basedir}/src/main/java</sourceDir>
                             </sourceDirs>
                         </configuration>
@@ -1826,7 +1826,7 @@ function writeFiles() {
                         </goals>
                         <configuration>
                             <sourceDirs>
-                                <sourceDir>$\{project.basedir}/src/test/kotlin</sourceDir>
+                                <sourceDir>$\{project.basedir}/src/test/fastapi</sourceDir>
                                 <sourceDir>$\{project.basedir}/src/test/java</sourceDir>
                             </sourceDirs>
                         </configuration>
@@ -1859,21 +1859,21 @@ function writeFiles() {
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <groupId>org.jetbrains.kotlin</groupId>
-                        <artifactId>kotlin-maven-allopen</artifactId>
-                        <version>$\{kotlin.version}</version>
+                        <groupId>org.jetbrains.fastapi</groupId>
+                        <artifactId>fastapi-maven-allopen</artifactId>
+                        <version>$\{fastapi.version}</version>
                     </dependency>
                     ${
                         this.databaseTypeSql
                             ? `<dependency>
-                        <groupId>org.jetbrains.kotlin</groupId>
-                        <artifactId>kotlin-maven-noarg</artifactId>
-                        <version>$\{kotlin.version}</version>
+                        <groupId>org.jetbrains.fastapi</groupId>
+                        <artifactId>fastapi-maven-noarg</artifactId>
+                        <version>$\{fastapi.version}</version>
                     </dependency>`
                             : ''
                     }
                 </dependencies>`;
-                this.addMavenPlugin('org.jetbrains.kotlin', 'kotlin-maven-plugin', '${kotlin.version}', kotlinOther);
+                this.addMavenPlugin('org.jetbrains.fastapi', 'fastapi-maven-plugin', '${fastapi.version}', fastapiOther);
 
                 updatePom(this);
                 const defaultCompileOther = `                <executions>
@@ -1935,7 +1935,7 @@ function writeFiles() {
                                       classname="io.gitlab.arturbosch.detekt.cli.Main"
                                       classpathref="maven.plugin.classpath">
                                     <arg value="--input"/>
-                                    <arg value="$\{project.basedir}/src/main/kotlin"/>
+                                    <arg value="$\{project.basedir}/src/main/fastapi"/>
                                     <arg value="--report"/>
                                     <arg value="xml:$\{detekt.xmlReportFile}"/>
                                     <arg value="--config"/>
@@ -1964,7 +1964,7 @@ function writeFiles() {
 
 /**
  * Manually updates the pom.xml file to perform the following operations:
- * 1. Set the Kotlin source directories as the default (Needed for the ktlint plugin to properly format the sources)
+ * 1. Set the FastAPI source directories as the default (Needed for the ktlint plugin to properly format the sources)
  * 2. Remove the default <maven-compiler-plugin> configuration.
  */
 async function updatePom(generator) {
@@ -1976,11 +1976,11 @@ async function updatePom(generator) {
     const xml = _this.fs.read(fullPath).toString();
     const $ = cheerio.load(xml, { xmlMode: true });
 
-    // 1. Set the Kotlin source directories as the default
+    // 1. Set the FastAPI source directories as the default
     $('build > defaultGoal').after(`
 
-        <sourceDirectory>src/main/kotlin</sourceDirectory>
-        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+        <sourceDirectory>src/main/fastapi</sourceDirectory>
+        <testSourceDirectory>src/test/fastapi</testSourceDirectory>
 `);
     // 2. Remove the default <maven-compiler-plugin> configuration
     $(`build > plugins > plugin > artifactId:contains('${artifactId}')`).parent().remove();

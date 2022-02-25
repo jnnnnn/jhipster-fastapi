@@ -58,7 +58,7 @@ fi
 
 # folder for samples
 if [[ "$KHI_SAMPLES" == "" ]]; then
-    KHI_SAMPLES="$KHI_INTEG"/samples-kotlin
+    KHI_SAMPLES="$KHI_INTEG"/samples-fastapi
 fi
 
 if [[ -d "$KHI_SAMPLES"/.jhipster ]]; then

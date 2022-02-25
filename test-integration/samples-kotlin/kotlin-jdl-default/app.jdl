@@ -12,7 +12,7 @@ application {
     enableTranslation true,
     nativeLanguage en,
     languages [ en, fr ],
-    blueprint kotlin
+    blueprint fastapi
   }
   entities *
 }

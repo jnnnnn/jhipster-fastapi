@@ -112,9 +112,9 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 <%_ } else if (testsNeedCsrf) { _%>
 import org.springframework.security.test.web.reactive.server.SecurityMockServerConfigurers.csrf
 <%_ } _%>
-import kotlin.test.assertNotNull
+import fastapi.test.assertNotNull
 <%_ if (cacheManagerIsAvailable) { _%>
-import kotlin.test.assertNull
+import fastapi.test.assertNull
 <%_ } _%>
 
 /**

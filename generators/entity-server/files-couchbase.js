@@ -18,7 +18,7 @@
  */
 const constants = require('generator-jhipster/generators/generator-constants');
 
-const SERVER_MAIN_SRC_DIR = `${constants.MAIN_DIR}kotlin/`;
+const SERVER_MAIN_SRC_DIR = `${constants.MAIN_DIR}fastapi/`;
 
 const entityCouchbaseFiles = {
     dbChangelog: [

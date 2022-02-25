@@ -41,8 +41,8 @@ const { SERVICE_CLASS, SERVICE_IMPL } = ServiceTypes;
 /* Constants use throughout */
 const INTERPOLATE_REGEX = constants.INTERPOLATE_REGEX;
 const TEST_DIR = constants.TEST_DIR;
-const SERVER_MAIN_SRC_KOTLIN_DIR = `${constants.MAIN_DIR}kotlin/`;
-const SERVER_TEST_SRC_KOTLIN_DIR = `${constants.TEST_DIR}kotlin/`;
+const SERVER_MAIN_SRC_FASTAPI_DIR = `${constants.MAIN_DIR}fastapi/`;
+const SERVER_TEST_SRC_FASTAPI_DIR = `${constants.TEST_DIR}fastapi/`;
 
 /**
  * The default is to use a file path string. It implies use of the template method.
@@ -52,7 +52,7 @@ const serverFiles = {
     ...baseServerFiles,
     server: [
         {
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/domain/Entity.kt.jhi',
@@ -68,7 +68,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.databaseType === 'sql' && generator.reactive,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/domain/Entity.kt.jhi.spring_data_reactive',
@@ -79,7 +79,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.databaseType === 'cassandra',
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/domain/Entity.kt.jhi.spring_data_cassandra',
@@ -91,7 +91,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.databaseType === 'neo4j',
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/domain/Entity.kt.jhi.spring_data_neo4j',
@@ -102,7 +102,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.databaseType === 'sql' && !generator.reactive,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/domain/Entity.kt.jhi.javax_persistence',
@@ -113,7 +113,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.databaseType === 'mongodb',
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/domain/Entity.kt.jhi.spring_data_mongodb',
@@ -124,7 +124,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.databaseType === 'sql' && !generator.reactive && generator.enableHibernateCache,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/domain/Entity.kt.jhi.hibernate_cache',
@@ -135,7 +135,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.searchEngine === 'elasticsearch',
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/domain/Entity.kt.jhi.elastic_search',
@@ -146,7 +146,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.embedded,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/EntityResource.kt',
@@ -157,7 +157,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.jpaMetamodelFiltering,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/service/criteria/EntityCriteria.kt',
@@ -173,7 +173,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.searchEngine === ELASTICSEARCH && !generator.embedded,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/repository/search/EntitySearchRepository.kt',
@@ -185,7 +185,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.searchEngine === ELASTICSEARCH && !generator.embedded && !generator.paginationNo,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/repository/search/SortToFieldSortBuilderConverter.kt',
@@ -196,7 +196,7 @@ const serverFiles = {
         },
         {
             condition: generator => !generator.reactive && !generator.embedded && generator.databaseType !== COUCHBASE,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/repository/EntityRepository.kt',
@@ -207,7 +207,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.reactive && !generator.embedded && generator.databaseType !== COUCHBASE,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/repository/EntityRepository_reactive.kt',
@@ -218,7 +218,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.reactive && generator.databaseTypeSql && !generator.embedded,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/repository/EntityRepositoryInternalImpl_reactive.kt',
@@ -239,7 +239,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.service === SERVICE_IMPL && !generator.embedded,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/service/EntityService.kt',
@@ -255,7 +255,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.service === SERVICE_CLASS && !generator.embedded,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/service/impl/EntityServiceImpl.kt',
@@ -266,7 +266,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.dto === MAPSTRUCT,
-            path: SERVER_MAIN_SRC_KOTLIN_DIR,
+            path: SERVER_MAIN_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/service/dto/EntityDTO.kt',
@@ -289,7 +289,7 @@ const serverFiles = {
     test: [
         {
             condition: generator => !generator.embedded,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/web/rest/EntityResourceIT.kt',
@@ -298,7 +298,7 @@ const serverFiles = {
                             _,
                             chalkRed: chalk.red,
                             fs,
-                            SERVER_TEST_SRC_KOTLIN_DIR,
+                            SERVER_TEST_SRC_FASTAPI_DIR,
                         },
                     },
                     renameTo: generator => `${generator.entityAbsoluteFolder}/web/rest/${generator.entityClass}ResourceIT.kt`,
@@ -308,7 +308,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.searchEngine === ELASTICSEARCH && !generator.embedded,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/repository/search/EntitySearchRepositoryMockConfiguration.kt',
@@ -330,7 +330,7 @@ const serverFiles = {
             ],
         },
         {
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/domain/EntityTest.kt',
@@ -341,7 +341,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.dto === MAPSTRUCT,
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/service/dto/EntityDTOTest.kt',
@@ -352,7 +352,7 @@ const serverFiles = {
         },
         {
             condition: generator => generator.dto === MAPSTRUCT && [SQL, MONGODB, COUCHBASE, NEO4J].includes(generator.databaseType),
-            path: SERVER_TEST_SRC_KOTLIN_DIR,
+            path: SERVER_TEST_SRC_FASTAPI_DIR,
             templates: [
                 {
                     file: 'package/service/mapper/EntityMapperTest.kt',
@@ -403,10 +403,10 @@ function writeFiles() {
                 if (!this.skipServer) {
                     const pathToTemplateFile = `${fetchFromInstalledPHipster(
                         'templates'
-                    )}/${SERVER_MAIN_SRC_KOTLIN_DIR}package/domain/enumeration/Enum.kt.ejs`;
+                    )}/${SERVER_MAIN_SRC_FASTAPI_DIR}package/domain/enumeration/Enum.kt.ejs`;
                     this.template(
                         pathToTemplateFile,
-                        `${SERVER_MAIN_SRC_KOTLIN_DIR}${this.entityAbsoluteFolder}/domain/enumeration/${fieldType}.kt`,
+                        `${SERVER_MAIN_SRC_FASTAPI_DIR}${this.entityAbsoluteFolder}/domain/enumeration/${fieldType}.kt`,
                         this,
                         {},
                         enumInfo

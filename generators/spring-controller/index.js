@@ -24,8 +24,8 @@ const constants = require('generator-jhipster/generators/generator-constants');
 const statistics = require('generator-jhipster/generators/statistics');
 const prompts = require('./prompts');
 
-const SERVER_MAIN_SRC_DIR = `${constants.MAIN_DIR}kotlin/`;
-const SERVER_TEST_SRC_DIR = `${constants.TEST_DIR}kotlin/`;
+const SERVER_MAIN_SRC_DIR = `${constants.MAIN_DIR}fastapi/`;
+const SERVER_TEST_SRC_DIR = `${constants.TEST_DIR}fastapi/`;
 
 module.exports = class extends BaseGenerator {
     constructor(args, opts) {
@@ -93,7 +93,7 @@ module.exports = class extends BaseGenerator {
     _default() {
         return {
             insight() {
-                statistics.sendSubGenEvent('generator', 'spring-controller-kotlin');
+                statistics.sendSubGenEvent('generator', 'spring-controller-fastapi');
             },
         };
     }

@@ -22,7 +22,7 @@ const os = require('os');
 const shelljs = require('shelljs');
 const ServerGenerator = require('generator-jhipster/generators/server');
 const writeFiles = require('./files').writeFiles;
-const kotlinConstants = require('../generator-kotlin-constants');
+const fastapiConstants = require('../generator-fastapi-constants');
 
 module.exports = class extends ServerGenerator {
     constructor(args, opts, features) {
@@ -45,8 +45,8 @@ module.exports = class extends ServerGenerator {
         const phaseFromJHipster = super._initializing();
         const phipsterCustomSteps = {
             setupConstants() {
-                this.MOCKITO_KOTLIN_VERSION = kotlinConstants.MOCKITO_KOTLIN_VERSION;
-                this.DETEKT_CONFIG_FILE = kotlinConstants.DETEKT_CONFIG_FILE;
+                this.MOCKITO_FASTAPI_VERSION = fastapiConstants.MOCKITO_FASTAPI_VERSION;
+                this.DETEKT_CONFIG_FILE = fastapiConstants.DETEKT_CONFIG_FILE;
             },
         };
         return Object.assign(phaseFromJHipster, phipsterCustomSteps);
@@ -114,7 +114,7 @@ module.exports = class extends ServerGenerator {
                     this.info('Running ktlint...');
                     const exitCode = shelljs.exec(command, { silent: this.silent }).code;
                     if (exitCode === 0) {
-                        this.info(`Finished formatting Kotlin files in : ${new Date() - startTime}ms`);
+                        this.info(`Finished formatting FastAPI files in : ${new Date() - startTime}ms`);
                     } else {
                         this.warning('Something went wrong while running ktlint formatter...');
                     }

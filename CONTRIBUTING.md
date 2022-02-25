@@ -6,7 +6,7 @@
 
 `npm install -g yo | yarn global add yo`
 
-### Step 2 ✌️ : to setup JHipster-Kotlin generator
+### Step 2 ✌️ : to setup JHipster-FastAPI generator
 
 `git clone https://github.com/jhipster/jhipster-fastapi`
 
@@ -16,7 +16,7 @@
 
 `npm link | yarn link`
 
-( 🏁 Kudos, you just setup JHipster-Kotlin and linked to it locally )
+( 🏁 Kudos, you just setup JHipster-FastAPI and linked to it locally )
 
 ### Step 3 🤟 : before generating your application, go to your application folder
 
